@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "lib": [ "es2017" ],
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "noEmit": false,
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "strict": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
