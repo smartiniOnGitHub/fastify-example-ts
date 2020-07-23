@@ -48,8 +48,7 @@ For example, you can run directly with:
 `docker run -d -p 8000:8000 -t smartiniatdocker09/fastify-example-ts:latest-alpine`
 and browse to [localhost:8000](http://localhost:8000).
 Published Docker tags are 'latest' / 'latest-alpine', 
-and starting from source code tag '2.2.0' there is:
-the same tag, and even the '2.2.0-alpine' variant.
+and for any tag, there is even the 'x.y.z-alpine' variant.
 For more info look at [tags - smartiniatdocker09/fastify-example-ts](https://hub.docker.com/r/smartiniatdocker09/fastify-example-ts/tags).
 
 Of course you need a local installation of Docker (recent, if possible latest), 
@@ -68,7 +67,7 @@ For other custom commands look the 'scripts' section inside 'package.json'.
 
 ## Requirements
 
-Fastify ^2.14.1, Node.js 10 LTS (10.13.0) or later.
+Fastify ^3.0.0, Node.js 10 LTS (10.13.0) or later.
 
 
 ## Note
