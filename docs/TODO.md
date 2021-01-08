@@ -3,6 +3,7 @@
 ## TODO
 
 * [x] general: add lint and some tests ... wip
+* [x] general: add JSON Schema to TypeScript, as seen for example [here](https://www.fastify.io/docs/latest/TypeScript/) (same doc seen in GitHub, only with a different style) ... wip
 * [x] general: add the ability to serve favicon and a static page as home page (add related content even here), of course using related plugins ... wip
 * [x] general: add more content in 'package.json', like in fastify-example (add stuff related to more tests, Docker, etc); but add a build mode that uses TypeScript (TS) watch mode (check if use it instead of usual dependency on 'nodemon') ... added npm custom command 'build:watch' that uses it, but it only compiles (without a server restart or similar, maybe 'nodemon' is needed even in this case) and not sure it takes in account even other resources (templates, etc), so maybe its configuration need to be tweaked ... wip
 * [x] general: add the ability to use even JavaScript (js) files, in TypeScript compiler (options) and to check them, could be useful ... wip
@@ -11,7 +12,9 @@
 * [x] general: enable snyk here ... wip
 * [x] general: add same features of fastify-example (evolve like it), and ensure all is good ... wip
 
-* [x] general: later update to Node.js 12 LTS and so output ES2019 ... wip
+* [x] general: later update to Node.js 12 LTS (12.13.0) and so output ES2019 ... wip
+
+* [x] general: later update to Node.js 14 LTS (14.15.0) and so output ES2021; anyway, export all as native ES Modules (ESM), important; as a sample take this great example: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
 
 
 ---------------
@@ -25,6 +28,7 @@
 * [x] general: rename initial 'server.ts' into 'server-simple.ts', and keep it as a minimal/initial but working example ... ok, but duplicated for now; to resolve TypeScript errors update project config
 * [x] general: update to use latest Fastify 3.x (released today), see at [fastify - npmjs](https://www.npmjs.com/package/fastify); but do it in a feature branch, to merge later into master (and before tag existing master and open a branch for fastify-2.x) ... no, this is a new project so it's good the same to use that new release directly here
 * [x] general: update to use latest Fastify 3.x (current release now); and update requirements ... ok
+* [x] general: keep compatibility with ES2017 for now, because it seems most of current browsers already support it, approx. 90%, as seen [here](https://web.dev/publish-modern-javascript/) ... ok
 
 
 ---------------
