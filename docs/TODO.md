@@ -2,7 +2,15 @@
 
 ## TODO
 
-* [x] general: add lint and some tests ... wip
+* [x] general: update all dependencies to latest ... ok
+* [x] general: remove 'standardx' and fix like in Fastify ... ok, but had to disable lint of js sources with 'standard' from npm custom command 'lint:js' (and removed its call from the more general npm custom command 'lint'), because at the moment no '*.js' sources are present; re-add and enable later if/when needed
+* [x] general: add npm custom command 'lint:ts:types' to only check/validate TypeScript types ... ok, but for now it's not called from the more general npm custom command 'lint'), because at the moment no '*.d.ts' sources are present; re-add and enable later if/when needed
+* [x] general: remove 'esdoc' and add 'jsdoc' instead ... ok
+* [x] general: delete '.eslint' and ensure the new file '.eslint.json' is used ... wip
+* [x] general: add some tests ... start to add a sample test, but need to update it to ts syntax ... wip
+* [x] general: Update requirements to Node.js 12 LTS, then update output to be 'es2020', with support for ES Modules (esm) ... wip
+* [x] general: update ts sources to use Fastify TypeScript definitions ... wip
+* [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc) ... wip
 * [x] general: add JSON Schema to TypeScript, as seen for example [here](https://www.fastify.io/docs/latest/TypeScript/) (same doc seen in GitHub, only with a different style) ... wip
 * [x] general: add the ability to serve favicon and a static page as home page (add related content even here), of course using related plugins ... wip
 * [x] general: add more content in 'package.json', like in fastify-example (add stuff related to more tests, Docker, etc); but add a build mode that uses TypeScript (TS) watch mode (check if use it instead of usual dependency on 'nodemon') ... added npm custom command 'build:watch' that uses it, but it only compiles (without a server restart or similar, maybe 'nodemon' is needed even in this case) and not sure it takes in account even other resources (templates, etc), so maybe its configuration need to be tweaked ... wip
@@ -12,7 +20,7 @@
 * [x] general: enable snyk here ... wip
 * [x] general: add same features of fastify-example (evolve like it), and ensure all is good ... wip
 
-* [x] general: later update to Node.js 12 LTS (12.13.0) and so output ES2019 ... wip
+* [x] general: later update to Node.js 12 LTS (12.13.0) and so output ES2019, or better ES2020 ... wip
 
 * [x] general: later update to Node.js 14 LTS (14.15.0) and so output ES2021; anyway, export all as native ES Modules (ESM), important; as a sample take this great example: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
 
