@@ -1,11 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "checkJs": true,
+    "esModuleInterop": true,
     "lib": [ "ES2017", "DOM" ],
     "module": "commonjs",
+    "moduleResolution": "node",
     "noEmit": true,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": false,
     "strict": true,
-    "esModuleInterop": true
+    "strictNullChecks": true,
+    "target": "ES2017"
   },
   "include": [
     "/types/*.test-d.ts",

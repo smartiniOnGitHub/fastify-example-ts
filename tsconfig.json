@@ -1,19 +1,20 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "ES2017",
-    "lib": [ "ES2017", "DOM" ],
-    "outDir": "dist",
+    "checkJs": true,
     "esModuleInterop": true,
+    "lib": [ "ES2017", "DOM" ],
+    "module": "commonjs",
+    "moduleResolution": "node",
     "noEmit": false,
     "noImplicitAny": true,
+    "outDir": "dist",
     "preserveConstEnums": true,
     "removeComments": true,
     "sourceMap": false,
     "strict": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "target": "ES2017"
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src"],
+  "exclude": ["lib", "node_modules"],
 }

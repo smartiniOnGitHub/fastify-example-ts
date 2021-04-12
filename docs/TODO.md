@@ -7,13 +7,24 @@
 * [x] general: add npm custom command 'lint:ts:types' to only check/validate TypeScript types ... ok, but for now it's not called from the more general npm custom command 'lint'), because at the moment no '*.d.ts' sources are present; re-add and enable later if/when needed
 * [x] general: remove 'esdoc' and add 'jsdoc' instead ... ok
 * [x] general: delete '.eslintrc' and ensure the new file '.eslintrc.json' (with more settings inside) is used ... ok
-* [x] general: update tests config to be able to use Node-Tap ('tap') even with TypeScript; for example look at [ilyadoroshin/node-tap-ts-example - GitHub](https://github.com/ilyadoroshin/node-tap-ts-example) ... wip
-* [x] general: add some tests ... start to add a sample test, but need to update it to ts syntax ... wip
-* [x] general: Update requirements to Node.js 12 LTS, then update output to be 'es2020', with support for ES Modules (esm) ... wip
-* [x] general: update ts sources to use Fastify TypeScript definitions ... wip
+* [x] general: tweak TypeScript config file ... ok, updated even the same under the './types' folder (not sure it''s really needed here because this is not a library)
+* [x] general: add npm custom commands to clean, build, start sources as 'start:dev', and another for tests: clean, run tests in dev mode (auto-relaunch modified sources) as 'test:dev' ... ok, added, but had to comment the override that disable coverage generation
+* [x] general: update tests config to be able to use Node-Tap ('tap') even with TypeScript; for example look at [ilyadoroshin/node-tap-ts-example - GitHub](https://github.com/ilyadoroshin/node-tap-ts-example) but note it uses a fork of 'node-tap' ... ok, but I had to update the path given to tap: update 'test/*.test.js' in 'test/*.test.ts'; later if needed to test even JavaScript test sources, add even the pattern for js files
+* [x] general: install as dev dependencies 'tap' TypeScript types definitions ('@types/tap') ... ok done, but at the moment they are not been updated to latest tap release (currently '15.0.2'); update later
+* [x] general: use a modern and good example for Fastify 3.x as a reference for some stuff here, for example [delvedor/fastify-101 - GitHub](https://github.com/delvedor/fastify-101), even if not in TypeScript ... wip
+* [x] general: add some tests and update/cleanup existing ones ... wip
+* [x] general: Update requirements to Node.js 12 LTS, then: update 'package.json' with `"type": "module",` and related settings, then update TypeScript output to be 'es2020' with support for ES Modules (esm), and update all import statements using esm syntax, for example:
+```
+// import assert from 'node:assert'
+import { strict as assert } from 'node:assert'
+import tap, { Test } from 'tap'
+```
+and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... wip
+* [x] general: update ts sources to use Fastify TypeScript definitions ... check if still needed ... wip
 * [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc) ... wip
 * [x] general: add JSON Schema to TypeScript, as seen for example [here](https://www.fastify.io/docs/latest/TypeScript/) (same doc seen in GitHub, only with a different style) ... wip
 * [x] general: add the ability to serve favicon and a static page as home page (add related content even here), of course using related plugins ... wip
+* [x] general: replace 'simple-get' with 'undici ... wip
 * [x] general: add more content in 'package.json', like in fastify-example (add stuff related to more tests, Docker, etc); but add a build mode that uses TypeScript (TS) watch mode (check if use it instead of usual dependency on 'nodemon') ... added npm custom command 'build:watch' that uses it, but it only compiles (without a server restart or similar, maybe 'nodemon' is needed even in this case) and not sure it takes in account even other resources (templates, etc), so maybe its configuration need to be tweaked ... wip
 * [x] general: add the ability to use even JavaScript (js) files, in TypeScript compiler (options) and to check them, could be useful ... wip
 * [x] general: add some types (using TS features), and ensure Fastify (and related plugins) types are resolved in the right way ... wip
