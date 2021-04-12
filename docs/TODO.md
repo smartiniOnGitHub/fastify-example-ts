@@ -6,7 +6,8 @@
 * [x] general: remove 'standardx' and fix like in Fastify ... ok, but had to disable lint of js sources with 'standard' from npm custom command 'lint:js' (and removed its call from the more general npm custom command 'lint'), because at the moment no '*.js' sources are present; re-add and enable later if/when needed
 * [x] general: add npm custom command 'lint:ts:types' to only check/validate TypeScript types ... ok, but for now it's not called from the more general npm custom command 'lint'), because at the moment no '*.d.ts' sources are present; re-add and enable later if/when needed
 * [x] general: remove 'esdoc' and add 'jsdoc' instead ... ok
-* [x] general: delete '.eslint' and ensure the new file '.eslint.json' is used ... wip
+* [x] general: delete '.eslintrc' and ensure the new file '.eslintrc.json' (with more settings inside) is used ... ok
+* [x] general: update tests config to be able to use Node-Tap ('tap') even with TypeScript; for example look at [ilyadoroshin/node-tap-ts-example - GitHub](https://github.com/ilyadoroshin/node-tap-ts-example) ... wip
 * [x] general: add some tests ... start to add a sample test, but need to update it to ts syntax ... wip
 * [x] general: Update requirements to Node.js 12 LTS, then update output to be 'es2020', with support for ES Modules (esm) ... wip
 * [x] general: update ts sources to use Fastify TypeScript definitions ... wip
