@@ -2,17 +2,13 @@
 
 ## TODO
 
-* [x] general: update all dependencies to latest ... ok
-* [x] general: remove 'standardx' and fix like in Fastify ... ok, but had to disable lint of js sources with 'standard' from npm custom command 'lint:js' (and removed its call from the more general npm custom command 'lint'), because at the moment no '*.js' sources are present; re-add and enable later if/when needed
-* [x] general: add npm custom command 'lint:ts:types' to only check/validate TypeScript types ... ok, but for now it's not called from the more general npm custom command 'lint'), because at the moment no '*.d.ts' sources are present; re-add and enable later if/when needed
-* [x] general: remove 'esdoc' and add 'jsdoc' instead ... ok
-* [x] general: delete '.eslintrc' and ensure the new file '.eslintrc.json' (with more settings inside) is used ... ok
-* [x] general: tweak TypeScript config file ... ok, updated even the same under the './types' folder (not sure it''s really needed here because this is not a library)
-* [x] general: add npm custom commands to clean, build, start sources as 'start:dev', and another for tests: clean, run tests in dev mode (auto-relaunch modified sources) as 'test:dev' ... ok, added, but had to comment the override that disable coverage generation
-* [x] general: update tests config to be able to use Node-Tap ('tap') even with TypeScript; for example look at [ilyadoroshin/node-tap-ts-example - GitHub](https://github.com/ilyadoroshin/node-tap-ts-example) but note it uses a fork of 'node-tap' ... ok, but I had to update the path given to tap: update 'test/*.test.js' in 'test/*.test.ts'; later if needed to test even JavaScript test sources, add even the pattern for js files
-* [x] general: install as dev dependencies 'tap' TypeScript types definitions ('@types/tap') ... ok done, but at the moment they are not been updated to latest tap release (currently '15.0.2'); update later
-* [x] general: use a modern and good example for Fastify 3.x as a reference for some stuff here, for example [delvedor/fastify-101 - GitHub](https://github.com/delvedor/fastify-101), even if not in TypeScript ... wip
 * [x] general: add some tests and update/cleanup existing ones ... wip
+* [x] general: add some content (from my 'utils.js' here but as 'utils.ts', start b y copying JavaScript code and progressively update to TypeScript semantics ... then fix (and maybe remove) existing 'require' statements; then remove pre-ES6 code; then remove some unnecessary functions; last, check if remove ESLint rule that disables the usage of ts 'any' type ('eslint @typescript-eslint/no-explicit-any'), and maybe even the one that disable the usage of 'require' statements ('@typescript-eslint/no-var-requires') ... wip
+* [x] content: add initial (but minimal) content ... wip
+* [x] content: update README and CHANGELOG ... wip
+* [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... wip
+
+* [x] general: bump next release (or do not change version in 'package.json' for now, and tag sources at release end) ... wip
 * [x] general: Update requirements to Node.js 12 LTS, then: update 'package.json' with `"type": "module",` and related settings, then update TypeScript output to be 'es2020' with support for ES Modules (esm), and update all import statements using esm syntax, for example:
 ```
 // import assert from 'node:assert'
@@ -20,7 +16,7 @@ import { strict as assert } from 'node:assert'
 import tap, { Test } from 'tap'
 ```
 and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... wip
-* [x] general: update ts sources to use Fastify TypeScript definitions ... check if still needed ... wip
+* [x] general: use a modern and good example for Fastify 3.x as a reference for some stuff here, for example [delvedor/fastify-101 - GitHub](https://github.com/delvedor/fastify-101), even if not in TypeScript ... wip
 * [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc) ... wip
 * [x] general: add JSON Schema to TypeScript, as seen for example [here](https://www.fastify.io/docs/latest/TypeScript/) (same doc seen in GitHub, only with a different style) ... wip
 * [x] general: add the ability to serve favicon and a static page as home page (add related content even here), of course using related plugins ... wip
@@ -31,8 +27,8 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: use same Fastify plugins used in fastify-example, and ensure all is good, even types ... wip
 * [x] general: enable snyk here ... wip
 * [x] general: add same features of fastify-example (evolve like it), and ensure all is good ... wip
-
-* [x] general: later update to Node.js 12 LTS (12.13.0) and so output ES2019, or better ES2020 ... wip
+* [x] content: update README and CHANGELOG ... wip
+* [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... wip
 
 * [x] general: later update to Node.js 14 LTS (14.15.0) and so output ES2021; anyway, export all as native ES Modules (ESM), important; as a sample take this great example: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
 
@@ -49,6 +45,17 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: update to use latest Fastify 3.x (released today), see at [fastify - npmjs](https://www.npmjs.com/package/fastify); but do it in a feature branch, to merge later into master (and before tag existing master and open a branch for fastify-2.x) ... no, this is a new project so it's good the same to use that new release directly here
 * [x] general: update to use latest Fastify 3.x (current release now); and update requirements ... ok
 * [x] general: keep compatibility with ES2017 for now, because it seems most of current browsers already support it, approx. 90%, as seen [here](https://web.dev/publish-modern-javascript/) ... ok
+* [x] general: update all dependencies to latest ... ok
+* [x] general: remove 'standardx' and fix like in Fastify ... ok, but had to disable lint of js sources with 'standard' from npm custom command 'lint:js' (and removed its call from the more general npm custom command 'lint'), because at the moment no '*.js' sources are present; re-add and enable later if/when needed
+* [x] general: add npm custom command 'lint:ts:types' to only check/validate TypeScript types ... ok, but for now it's not called from the more general npm custom command 'lint'), because at the moment no '*.d.ts' sources are present; re-add and enable later if/when needed
+* [x] general: remove 'esdoc' and add 'jsdoc' instead ... ok
+* [x] general: delete '.eslintrc' and ensure the new file '.eslintrc.json' (with more settings inside) is used ... ok
+* [x] general: tweak TypeScript config file ... ok, updated even the same under the './types' folder (not sure it''s really needed here because this is not a library)
+* [x] general: later update to Node.js 12 LTS (12.13.0) and so output ES2019, or better ES2020 ... maybe later
+* [x] general: add npm custom commands to clean, build, start sources as 'start:dev', and another for tests: clean, run tests in dev mode (auto-relaunch modified sources) as 'test:dev' ... ok, added, but had to comment the override that disable coverage generation
+* [x] general: update tests config to be able to use Node-Tap ('tap') even with TypeScript; for example look at [ilyadoroshin/node-tap-ts-example - GitHub](https://github.com/ilyadoroshin/node-tap-ts-example) but note it uses a fork of 'node-tap' ... ok, but I had to update the path given to tap: update 'test/*.test.js' in 'test/*.test.ts'; later if needed to test even JavaScript test sources, add even the pattern for js files
+* [x] general: install as dev dependencies 'tap' TypeScript types definitions ('@types/tap') ... ok done, but at the moment they are not been updated to latest tap release (currently '15.0.2'); updated today
+* [x] general: update ts sources to use Fastify TypeScript definitions ... ok, but done automatically because Fastify TypeScript type definitions are bundled in its npm package
 
 
 ---------------
