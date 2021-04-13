@@ -32,8 +32,7 @@ tap.pass('this is an empty test, but test frameworks works')
 tap.comment('Sample JavaScript Test file using TAP ...')
 
 // load the module/s to test
-// TODO: fix module import, and tests below ... wip
-// import utilModule from '../src/utils'
+const utilModule = require('../src/utils')
 
 // first tests, on a utility module
 // tap.equal(utilModule.isStringEmpty('not empty'), false)
@@ -41,13 +40,13 @@ tap.comment('Sample JavaScript Test file using TAP ...')
 
 // other tests, using a different (better) syntax
 test('util, string empty or not', (t) => {
-  // t.plan(2)
+  // t.plan(2) // ok but use t.end() now, without having to specify/update the right number of tests
+
+  t.ok(assert)
+  t.ok(utilModule)
 
   // t.equal(utilModule.isStringEmpty('not empty'), false)
   // t.equal(utilModule.isStringEmpty(''), true)
-
-  t.plan(1)
-  t.ok(assert)
 
   t.end()
 })
