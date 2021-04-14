@@ -2,9 +2,7 @@
 
 ## TODO
 
-* [x] general: add some tests and update/cleanup existing ones ... ok
-* [x] general: add some content (from my 'utils.js' here but as 'utils.ts', start by copying JavaScript code and progressively update to TypeScript semantics; then fix usage of 'require' statements even in Node-tap ('tap') tests made in TypeScript; some info even at [Asserts - Node-Tap](https://node-tap.org/docs/api/asserts/) ... fixed tests execution by: adding the build just before tests running (but built only first time on 'test:dev', pay attention if some source in the main source folder ('src') is changed), and using local paths that points to ts output folder ('dist') to reference generated (compiled) js sources ... ok
-* [x] general: tests made in TypeScript: later check if using [ts-node](https://www.npmjs.com/package/ts-node) it's possible to remove the build step ... maybe later
+* [x] general: tests made in TypeScript: enable/add some more feature that could be useful in the project ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code) ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
 * [x] general: tests made in TypeScript: check if/how to reduce required code coverage (currently at 100%, but here is not really important), to reduce the error: 'ERROR: Coverage for functions (0%) does not meet global threshold (100%)' ... wip
@@ -61,6 +59,9 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: update tests config to be able to use Node-Tap ('tap') even with TypeScript; for example look at [ilyadoroshin/node-tap-ts-example - GitHub](https://github.com/ilyadoroshin/node-tap-ts-example) but note it uses a fork of 'node-tap' ... ok, but I had to update the path given to tap: update 'test/*.test.js' in 'test/*.test.ts'; later if needed to test even JavaScript test sources, add even the pattern for js files
 * [x] general: install as dev dependencies 'tap' TypeScript types definitions ('@types/tap') ... ok done, but at the moment they are not been updated to latest tap release (currently '15.0.2'); updated today
 * [x] general: update ts sources to use Fastify TypeScript definitions ... ok, but done automatically because Fastify TypeScript type definitions are bundled in its npm package
+* [x] general: add some tests and update/cleanup existing ones ... ok
+* [x] general: add some content (from my 'utils.js' here but as 'utils.ts', start by copying JavaScript code and progressively update to TypeScript semantics; then fix usage of 'require' statements even in Node-tap ('tap') tests made in TypeScript; some info even at [Asserts - Node-Tap](https://node-tap.org/docs/api/asserts/) ... fixed tests execution by: adding the build just before tests running (but built only first time on 'test:dev', pay attention if some source in the main source folder ('src') is changed), and using local paths that points to ts output folder ('dist') to reference generated (compiled) js sources ... ok
+* [x] general: tests made in TypeScript: later check if using [ts-node](https://www.npmjs.com/package/ts-node) it's possible to remove the build step ... maybe later
 
 
 ---------------
