@@ -23,6 +23,7 @@
 /* eslint no-process-env: "off" */
 /* eslint no-eval: "off" */
 /* eslint @typescript-eslint/no-explicit-any: "off" */
+/* eslint @typescript-eslint/explicit-module-boundary-types: "off" */
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 // define a general object, and assign functions to it ...
@@ -274,9 +275,6 @@ module.exports.logDebugMessage = function (message: string) {
   const msg = this.name + ': ' + ((message != null) ? message : '')
   console.debug(msg)
 }
-module.exports.noop = function () {
-  // do nothing ...
-}
 
 module.exports.userBrowser = function (): string {
   // browser specific
@@ -527,17 +525,21 @@ module.exports.gitHashShort = async function () {
 }
  */
 
-/*
-// TODO: first enable these, as a start here ... wip
-module.exports.isUndefinedOrNull = function (o: any): boolean {
+function noop (): void {
+  // do nothing ...
+}
+
+function isUndefinedOrNull (o: any): boolean {
   return (o === undefined || o === null)
 }
 
-module.exports.isStringEmpty = function (obj: any): boolean {
-  if (this.isUndefinedOrNull(obj)) { return true }
+function isStringEmpty (obj: any): boolean {
+  if (isUndefinedOrNull(obj)) { return true }
   return obj.length === 0
 }
- */
 
-// export main object
-// module.exports.utils = utils
+export = {
+  noop,
+  isUndefinedOrNull,
+  isStringEmpty
+}

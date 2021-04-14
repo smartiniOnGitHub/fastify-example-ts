@@ -32,7 +32,9 @@ tap.pass('this is an empty test, but test frameworks works')
 tap.comment('Sample JavaScript Test file using TAP ...')
 
 // load the module/s to test
-const utilModule = require('../src/utils')
+// remember to use the ts output folder in local path
+const utilModule = require('../dist/utils')
+// import utilModule = require('../dist/utils') // future use
 
 // first tests, on a utility module
 // tap.equal(utilModule.isStringEmpty('not empty'), false)
@@ -45,8 +47,19 @@ test('util, string empty or not', (t) => {
   t.ok(assert)
   t.ok(utilModule)
 
-  // t.equal(utilModule.isStringEmpty('not empty'), false)
-  // t.equal(utilModule.isStringEmpty(''), true)
+  t.ok(utilModule.noop)
+  t.ok(utilModule.isUndefinedOrNull)
+  t.ok(utilModule.isStringEmpty)
+
+  t.equal(utilModule.isUndefinedOrNull(), true)
+  t.equal(utilModule.isUndefinedOrNull(null), true)
+  t.equal(utilModule.isUndefinedOrNull(''), false)
+  t.equal(utilModule.isUndefinedOrNull({}), false)
+
+  t.equal(utilModule.isStringEmpty(), true)
+  t.equal(utilModule.isStringEmpty(null), true)
+  t.equal(utilModule.isStringEmpty('not empty'), false)
+  t.equal(utilModule.isStringEmpty(''), true)
 
   t.end()
 })
