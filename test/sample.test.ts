@@ -37,8 +37,11 @@ const utilModule = require('../dist/utils')
 // import utilModule = require('../dist/utils') // future use
 
 // first tests, on a utility module
-// tap.equal(utilModule.isStringEmpty('not empty'), false)
-// tap.equal(utilModule.isStringEmpty(''), true)
+// as a sample
+tap.ok(utilModule)
+tap.ok(utilModule.noop)
+tap.ok(utilModule.isUndefinedOrNull)
+tap.ok(utilModule.isStringEmpty)
 
 // other tests, using a different (better) syntax
 test('util, string empty or not', (t) => {
