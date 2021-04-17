@@ -2,11 +2,8 @@
 
 ## TODO
 
-* [x] general: tests made in TypeScript: enable/add some more feature that could be useful in the project ... wip
-* [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code) ... wip
+* [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
-* [x] general: tests made in TypeScript: check if/how to reduce required code coverage (currently at 100%, but here is not really important), to reduce the error: 'ERROR: Coverage for functions (0%) does not meet global threshold (100%)' ... wip
-* [x] general: tests made in TypeScript: remove (if possible and not too complex here) ESLint rule that disables the usage of ts 'any' type ('eslint @typescript-eslint/no-explicit-any'), and even ('eslint @typescript-eslint/explicit-module-boundary-types'); then maybe even the one that disable the usage of 'require' statements ('@typescript-eslint/no-var-requires'); some useful info [here](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html) ... for example note that most code in the 'utils' source currently uses in many places the ts type 'any' because of its almost direct translation to js, but it can be improved to be more ts-oriented ... wip
 * [x] content: add initial (but minimal) content ... wip
 * [x] content: update README and CHANGELOG ... wip
 * [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... wip
@@ -19,6 +16,7 @@ import { strict as assert } from 'node:assert'
 import tap, { Test } from 'tap'
 ```
 and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... wip
+* [x] general: check if split main server in: server creation and server start, to be able to reuse server creation even in tests and inject calls in it; for example see 'fastify-starter' at [CodeSandbox](https://codesandbox.io) ... wip
 * [x] general: use a modern and good example for Fastify 3.x as a reference for some stuff here, for example [delvedor/fastify-101 - GitHub](https://github.com/delvedor/fastify-101), even if not in TypeScript ... wip
 * [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc) ... wip
 * [x] general: add JSON Schema to TypeScript, as seen for example [here](https://www.fastify.io/docs/latest/TypeScript/) (same doc seen in GitHub, only with a different style) ... wip
@@ -62,6 +60,9 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: add some tests and update/cleanup existing ones ... ok
 * [x] general: add some content (from my 'utils.js' here but as 'utils.ts', start by copying JavaScript code and progressively update to TypeScript semantics; then fix usage of 'require' statements even in Node-tap ('tap') tests made in TypeScript; some info even at [Asserts - Node-Tap](https://node-tap.org/docs/api/asserts/) ... fixed tests execution by: adding the build just before tests running (but built only first time on 'test:dev', pay attention if some source in the main source folder ('src') is changed), and using local paths that points to ts output folder ('dist') to reference generated (compiled) js sources ... ok
 * [x] general: tests made in TypeScript: later check if using [ts-node](https://www.npmjs.com/package/ts-node) it's possible to remove the build step ... maybe later
+* [x] general: tests made in TypeScript: enable/add some more feature that could be useful in the project ... ok, but come features to enable later
+* [x] general: tests made in TypeScript: check if/how to reduce required code coverage (by default now at 100% since Tap 15, but here is not really important), to reduce the error: 'ERROR: Coverage for functions (0%) does not meet global threshold (100%)' ... ok, but had to force the flag '--no-check-coverage' in related npm custom commands
+* [x] general: tests made in TypeScript: remove (if possible and not too complex here) ESLint rule that disables the usage of ts 'any' type ('eslint @typescript-eslint/no-explicit-any'), and even ('eslint @typescript-eslint/explicit-module-boundary-types'); then maybe even the one that disable the usage of 'require' statements ('@typescript-eslint/no-var-requires'); some useful info [here](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html) ... for example note that most code in the 'utils' source currently uses in many places the ts type 'any' because of its almost direct translation to js, but it can be improved to be more ts-oriented ... maybe later, because I'm even interested to look what js does by calling such functions now implemented in ts, so mabye a wider (more generic) types in functions, could be useful; anyway chack it later
 
 
 ---------------
