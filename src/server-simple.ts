@@ -13,9 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import fastify from 'fastify'
+import Fastify from 'fastify'
 
-const server = fastify()
+/* eslint no-console: "off" */
+/* eslint no-undef: "off" */
+/* eslint no-unused-vars: "off" */
+/* eslint callback-return: "off" */
+/* eslint no-process-env: "off" */
+/* eslint @typescript-eslint/no-unused-vars: "off" */
+
+const server = Fastify()
 
 server.get('/', async (request, reply) => {
   return 'Hello from Fastify and TypeScript.'
