@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Fastify from 'fastify'
+import { FastifyInstance, FastifyReply, FastifyRequest, FastifyServerOptions } from 'fastify'
 
 /* eslint no-console: "off" */
 /* eslint no-undef: "off" */
@@ -25,18 +25,16 @@ import Fastify from 'fastify'
 /* eslint @typescript-eslint/no-unused-vars: "off" */
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
-const fastify = Fastify()
+// add content (routes, etc) in the given server instance
+// note that some routes here are normal (non-async) and others are async
+// export default async function server (fastify: FastifyInstance, opts: FastifyServerOptions) { // as esm
+async function server (fastify: FastifyInstance, opts: FastifyServerOptions) { // as a Node.js classic module (commonjs)
+  // add some routes
 
-// load a code configuration for the fastify instance just built
-// fastify.register(import('./build-server')) // as esm
-// for now, register it as a Node.js classic module (commonjs)
-const server = require('./build-server')
-fastify.register(server)
+  // fastify.get('/', async (request, reply) => { // shorter version
+  fastify.get('/', async (request:FastifyRequest, reply: FastifyReply) => {
+    return 'Hello from Fastify and TypeScript.'
+  })
+}
 
-fastify.listen(8000, '0.0.0.0', (err, address) => {
-  if (err) {
-    console.error(err)
-    process.exit(1)
-  }
-  console.log(`Server listening at ${address} ...`)
-})
+module.exports = server
