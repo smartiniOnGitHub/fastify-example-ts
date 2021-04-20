@@ -531,6 +531,20 @@ module.exports.gitHashShort = async function () {
 }
  */
 
+// utility function to return a value from an Either object:
+// error if defined (or throw it if related flag is true),
+// or the value (or its default value)
+function getFromEither (either: any, { throwOnError = false, value = {} } = {}):any {
+  if (either === undefined || either === null) { throw new Error('Missing mandatory argument (undefined or null)') }
+  if (either.err !== undefined && either.err !== null) {
+    if (throwOnError === true) { throw either.err }
+    // else
+    return either.err
+  } else {
+    return either.data || value
+  }
+}
+
 export = {
   buildError,
   clearConsole,
@@ -545,6 +559,7 @@ export = {
   formatObjectToJson,
   formatObjectToMap,
   formatObjectToString,
+  getFromEither,
   getOrElse,
   getType,
   getTypeFromConstructor,
