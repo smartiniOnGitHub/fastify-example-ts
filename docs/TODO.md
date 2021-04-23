@@ -2,7 +2,6 @@
 
 ## TODO
 
-* [x] general: split Fastify server configuration in its own source ('build-server' or similar), to be able to reuse it even in unit tests ... ok, for now as Node.js module and as ESM modules commented
 * [x] general: tests made in TypeScript: use the Fastify server configured in its own source, and ensure routes defined works in the right way (via injection) ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
@@ -66,6 +65,7 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: tests made in TypeScript: enable/add some more feature that could be useful in the project ... ok, but come features to enable later
 * [x] general: tests made in TypeScript: check if/how to reduce required code coverage (by default now at 100% since Tap 15, but here is not really important), to reduce the error: 'ERROR: Coverage for functions (0%) does not meet global threshold (100%)' ... ok, but had to force the flag '--no-check-coverage' in related npm custom commands
 * [x] general: tests made in TypeScript: remove (if possible and not too complex here) ESLint rule that disables the usage of ts 'any' type ('eslint @typescript-eslint/no-explicit-any'), and even ('eslint @typescript-eslint/explicit-module-boundary-types'); then maybe even the one that disable the usage of 'require' statements ('@typescript-eslint/no-var-requires'); some useful info [here](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html) ... for example note that most code in the 'utils' source currently uses in many places the ts type 'any' because of its almost direct translation to js, but it can be improved to be more ts-oriented ... maybe later, because I'm even interested to look what js does by calling such functions now implemented in ts, so mabye a wider (more generic) types in functions, could be useful; anyway chack it later
+* [x] general: split Fastify server configuration in its own source ('build-server' or similar), to be able to reuse it even in unit tests ... ok, for now as Node.js module and as ESM modules commented
 
 
 ---------------

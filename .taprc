@@ -1,5 +1,6 @@
 # tap config file
 # color: false
+check-coverage: false
 comments: true
 # coverage: false
 # jsx: true
