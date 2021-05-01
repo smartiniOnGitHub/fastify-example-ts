@@ -61,7 +61,7 @@
   },
   "peerDependencies": {},
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.13.0"
   },
   "tsd": {
     "directory": "types",
@@ -79,8 +79,8 @@
     "example",
     "fastify",
     "ejs",
-    "es6",
-    "es2017",
+    "es10",
+    "es2019",
     "typescript"
   ],
   "author": "Sandro Martini <sandro.martini@gmail.com>",

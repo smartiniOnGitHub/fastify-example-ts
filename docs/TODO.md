@@ -2,6 +2,7 @@
 
 ## TODO
 
+* [x] general: since 01 May 2021, Node.js 10 is in End-of-Life (EoL), so now update requirements to Node.js 12 LTS (12.13.0) and so output ES2019/ES10 or ES2020/ES11 ... ok, as seen at [Recommended Node TSConfig settings - TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping), [here](https://stackoverflow.com/questions/59787574/typescript-tsconfig-settings-for-node-js-12), etc, set target output to ES2019 and target library as ES2020 because many functions of it are already implemented since that version but not its syntax; for now keep commonjs modules
 * [x] general: tests made in TypeScript: use the Fastify server configured in its own source, and ensure routes defined works in the right way (via injection) ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
@@ -33,7 +34,7 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] content: update README and CHANGELOG ... wip
 * [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... wip
 
-* [x] general: later update to Node.js 14 LTS (14.15.0) and so output ES2021; anyway, export all as native ES Modules (ESM), important; as a sample take this great example: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
+* [x] general: later update to Node.js 14 LTS (14.15.0) and so output ES2020/ES11 or ES2021/ES12; for some info look at [Recommended Node TSConfig settings - TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping), [here](https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579), etc; anyway, export all as native ES Modules (ESM), important; as a sample take this great example: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
 
 
 ---------------

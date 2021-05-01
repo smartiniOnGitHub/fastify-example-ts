@@ -9,7 +9,7 @@
   "plugins": ["@typescript-eslint"],
   "env": { "node": true },
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 2019,
     "sourceType": "module",
     "project": "./types/tsconfig.json",
     "createDefaultProgram": true

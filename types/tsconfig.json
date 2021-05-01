@@ -2,7 +2,7 @@
   "compilerOptions": {
     "checkJs": true,
     "esModuleInterop": true,
-    "lib": [ "ES2017", "DOM" ],
+    "lib": [ "ES2020", "DOM" ],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmit": true,
@@ -13,7 +13,7 @@
     "sourceMap": false,
     "strict": true,
     "strictNullChecks": true,
-    "target": "ES2017"
+    "target": "ES2019"
   },
   "include": [
     "/types/*.test-d.ts",

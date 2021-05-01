@@ -1,7 +1,7 @@
 {
     "source": {
         "include": ["./src"],
-        "exclude": ["./example", "./test", "./lib"],
+        "exclude": ["./dist", "./example", "./lib", "./test"],
         "includePattern": ".+\\.js(doc|x)?$",
         "excludePattern": "(^|\\/|\\\\)_"
     },
