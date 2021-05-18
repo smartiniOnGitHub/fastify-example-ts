@@ -2,7 +2,6 @@
 
 ## TODO
 
-* [x] general: since 01 May 2021, Node.js 10 is in End-of-Life (EoL), so now update requirements to Node.js 12 LTS (12.13.0) and so output ES2019/ES10 or ES2020/ES11 ... ok, as seen at [Recommended Node TSConfig settings - TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping), [here](https://stackoverflow.com/questions/59787574/typescript-tsconfig-settings-for-node-js-12), etc, set target output to ES2019 and target library as ES2020 because many functions of it are already implemented since that version but not its syntax; for now keep commonjs modules
 * [x] general: tests made in TypeScript: use the Fastify server configured in its own source, and ensure routes defined works in the right way (via injection) ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
@@ -67,6 +66,8 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: tests made in TypeScript: check if/how to reduce required code coverage (by default now at 100% since Tap 15, but here is not really important), to reduce the error: 'ERROR: Coverage for functions (0%) does not meet global threshold (100%)' ... ok, but had to force the flag '--no-check-coverage' in related npm custom commands
 * [x] general: tests made in TypeScript: remove (if possible and not too complex here) ESLint rule that disables the usage of ts 'any' type ('eslint @typescript-eslint/no-explicit-any'), and even ('eslint @typescript-eslint/explicit-module-boundary-types'); then maybe even the one that disable the usage of 'require' statements ('@typescript-eslint/no-var-requires'); some useful info [here](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html) ... for example note that most code in the 'utils' source currently uses in many places the ts type 'any' because of its almost direct translation to js, but it can be improved to be more ts-oriented ... maybe later, because I'm even interested to look what js does by calling such functions now implemented in ts, so mabye a wider (more generic) types in functions, could be useful; anyway chack it later
 * [x] general: split Fastify server configuration in its own source ('build-server' or similar), to be able to reuse it even in unit tests ... ok, for now as Node.js module and as ESM modules commented
+* [x] general: since 01 May 2021, Node.js 10 is in End-of-Life (EoL), so now update requirements to Node.js 12 LTS (12.13.0) and so output ES2019/ES10 or ES2020/ES11 ... ok, as seen at [Recommended Node TSConfig settings - TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping), [here](https://stackoverflow.com/questions/59787574/typescript-tsconfig-settings-for-node-js-12), etc, set target output to ES2019 and target library as ES2020 because many functions of it are already implemented since that version but not its syntax; for now keep commonjs modules
+* [x] general: to improve interaction with ES Modules (ESM), look even [here](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) ... maybe later
 
 
 ---------------
