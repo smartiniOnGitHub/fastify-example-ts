@@ -2,7 +2,6 @@
 
 ## TODO
 
-* [x] general: add on 'Open in VS Code' badge in the README, as seen [here](https://code.visualstudio.com/updates/v1_58#_open-in-vs-code-badge) ... wip
 * [x] general: tests made in TypeScript: use the Fastify server configured in its own source, and ensure routes defined works in the right way (via injection) ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
@@ -72,6 +71,8 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: for some general info and examples about JWT, JWT Authentication using Node.js (so at server side), look even: [here](https://www.youtube.com/watch?v=7Q17ubqLfaM), [here](https://www.youtube.com/watch?v=mbsmsi7l3r4) with related repo [here](https://github.com/WebDevSimplified/JWT-Authentication), [here](https://www.youtube.com/watch?v=Ud5xKCYQTjM), etc ... ok; for info about how to manage user roles in Node.js (so at server side), look even [here](https://www.youtube.com/watch?v=jI4K7L-LI58), etc
 * [x] general: to simplify manual use/debug of API in the DEV environment, if using Visual Studio Code (VSCode), install the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension, and write API calls in one or more files '.http' or '.rest', then execute related callas directly from that file (open in the editor) and maybe save results, use/convert in cURL format, etc ... ok, very useful; see an example usage even [here](https://blog.bitsrc.io/vs-codes-rest-client-plugin-is-all-you-need-to-make-api-calls-e9e95fcfd85a); of course related files should be added to version control, but excluded from packaging
 * [x] general: check if publish this app at [Heroku](https://www.heroku.com/) but using Docker containers, some info even [here](https://dev.to/analythium/deploying-shiny-apps-to-heroku-with-docker-and-github-actions-2687); then add a bagde in README to point to it ... maybe later
+* [x] general: add on 'Open in VS Code' badge in the README, as seen [here](https://code.visualstudio.com/updates/v1_58#_open-in-vs-code-badge) ... no, it's no more present in that page, not sure it still works that way
+* [x] general: for a general structure of a more complex TypeScript project (with some  microservices, some shared libraries, etc), look ev en at [Make sharing TypeScript code and types quick and easy - LogRocket Blog](https://blog.logrocket.com/make-sharing-typescript-code-types-quick-easy/) and related sources [ashleydavis/sharing-typescript-code-libraries - GitHub](https://github.com/ashleydavis/sharing-typescript-code-libraries) ... maybe later, in general useful but here I'd have to move all current code in a new subfolder and add at least one shared library (for example in a './libs' folder)
 
 
 ---------------
