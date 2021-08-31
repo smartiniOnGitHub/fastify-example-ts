@@ -38,26 +38,26 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
-    "fast-json-stringify": "^2.7.6",
-    "fastify-static": "^4.2.2",
-    "fastify": "^3.17.0",
+    "fast-json-stringify": "^2.7.9",
+    "fastify-static": "^4.2.3",
+    "fastify": "^3.20.2",
     "is-docker": "^2.2.1",
     "make-promises-safe": "^5.1.0",
-    "point-of-view": "^4.14.0"
+    "point-of-view": "^4.15.2"
   },
   "devDependencies": {
-    "@types/node": "^15.6.1",
-    "@types/tap": "^15.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.25.0",
-    "@typescript-eslint/parser": "^4.25.0",
+    "@types/node": "^16.7.8",
+    "@types/tap": "^15.0.5",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
     "cross-env": "^7.0.3",
     "jsdoc": "^3.6.7",
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.12",
     "simple-get": "^4.0.0",
     "standard": "^16.0.3",
     "tap": "^15.0.9",
-    "tsd": "^0.16.0",
-    "typescript": "^4.3.2"
+    "tsd": "^0.17.0",
+    "typescript": "^4.4.2"
   },
   "peerDependencies": {},
   "engines": {
