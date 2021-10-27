@@ -33,7 +33,9 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] content: update README and CHANGELOG ... wip
 * [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... wip
 
-* [x] general: later update to Node.js 14 LTS (14.15.0) and so output ES2020/ES11 or ES2021/ES12; for some info look at [Recommended Node TSConfig settings - TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping), [here](https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579), etc; anyway, export all as native ES Modules (ESM), important; as a sample take this great example: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
+* [x] general: later update to Node.js 14 LTS (14.15.0)  and so output ES2020/ES11 or ES2021/ES12 (but partial support for it); for some info look at [Recommended Node TSConfig settings - TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping), [here](https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579), etc; anyway, export all as native ES Modules (ESM), important; as a sample take this great example: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
+
+* [x] general: later update to Node.js 16 LTS (16.13.0) and so output ES2022/ES13 or at least ES2021/ES12; ensure to expose all only as ES Modules (ESM), no more CommonJS ...
 
 
 ---------------
