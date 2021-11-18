@@ -2,6 +2,7 @@
 
 ## TODO
 
+* [x] general: update TypeScript to 4.5, then use its new features like [Import Assertions - TypeScript 4.5 - TypeScript blog](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5/#import-assertions) to load json data (maybe even css), etc ... wip
 * [x] general: tests made in TypeScript: use the Fastify server configured in its own source, and ensure routes defined works in the right way (via injection) ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
@@ -10,6 +11,7 @@
 * [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... wip
 
 * [x] general: bump next release (or do not change version in 'package.json' for now, and tag sources at release end) ... wip
+* [x] general: update 'is-docker' to '^3.0.0' but it requires this project to use ESM, see [here](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) for more info ... wip
 * [x] general: update requirements to Node.js 12 LTS and ESM modules, then: update 'package.json' with `"type": "module",` and related settings, then update TypeScript output to be 'es2020' with support for ES Modules (esm), and update all import statements using esm syntax, for example:
 ```
 // import assert from 'node:assert'
@@ -17,7 +19,7 @@ import { strict as assert } from 'node:assert'
 import tap, { Test } from 'tap'
 ```
 and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... wip
-* [x] general: update code to use only ESM modules (no more Node.js require statements, etc) ... wip
+* [x] general: update code to use only ESM modules (no more Node.js require statements, etc); but check if it's better with Node.js 14 LTS instead ... wip
 * [x] general: check if split main server in: server creation and server start, to be able to reuse server creation even in tests and inject calls in it; for example see 'fastify-starter' at [CodeSandbox](https://codesandbox.io) ... wip
 * [x] general: use a modern and good example for Fastify 3.x as a reference for some stuff here, for example [delvedor/fastify-101 - GitHub](https://github.com/delvedor/fastify-101), even if not in TypeScript ... wip
 * [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc) ... wip
