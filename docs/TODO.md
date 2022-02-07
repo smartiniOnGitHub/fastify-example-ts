@@ -2,7 +2,8 @@
 
 ## TODO
 
-* [x] general: update TypeScript to 4.5, then use its new features like [Import Assertions - TypeScript 4.5 - TypeScript blog](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5/#import-assertions) to load json data (maybe even css), etc ... wip
+* [x] general: use some new features of TypeScript 4.5.x, like [Import Assertions - TypeScript 4.5 - TypeScript blog](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5/#import-assertions) to load json data (maybe even css), etc ... wip
+* [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc) ... wip
 * [x] general: tests made in TypeScript: use the Fastify server configured in its own source, and ensure routes defined works in the right way (via injection) ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
@@ -12,17 +13,17 @@
 
 * [x] general: bump next release (or do not change version in 'package.json' for now, and tag sources at release end) ... wip
 * [x] general: update 'is-docker' to '^3.0.0' but it requires this project to use ESM, see [here](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) for more info ... wip
-* [x] general: update requirements to Node.js 12 LTS and ESM modules, then: update 'package.json' with `"type": "module",` and related settings, then update TypeScript output to be 'es2020' with support for ES Modules (esm), and update all import statements using esm syntax, for example:
+* [x] general: after the update of requirements to Node.js 14 LTS (or 16 LTS, or at least 12 LTS), migrate to ESM modules, so: update 'package.json' with `"type": "module",` and related settings, then update TypeScript output to be 'es2020' with support for ES Modules (esm), and update all import statements using esm syntax, for example:
 ```
 // import assert from 'node:assert'
 import { strict as assert } from 'node:assert'
 import tap, { Test } from 'tap'
 ```
 and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... wip
-* [x] general: update code to use only ESM modules (no more Node.js require statements, etc); but check if it's better with Node.js 14 LTS instead ... wip
+* [x] general: after the update to Node.js 14 LTS (14.15.0), and so output ES2020/ES11, export all as native ES Modules (ESM), important; for better TypeScript settings with ESM and CommonJS ìlook even [here](https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579), etc ... wip
+* [x] general: update code like this great example using ESM: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
 * [x] general: check if split main server in: server creation and server start, to be able to reuse server creation even in tests and inject calls in it; for example see 'fastify-starter' at [CodeSandbox](https://codesandbox.io) ... wip
 * [x] general: use a modern and good example for Fastify 3.x as a reference for some stuff here, for example [delvedor/fastify-101 - GitHub](https://github.com/delvedor/fastify-101), even if not in TypeScript ... wip
-* [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc) ... wip
 * [x] general: add JSON Schema to TypeScript, as seen for example [here](https://www.fastify.io/docs/latest/TypeScript/) (same doc seen in GitHub, only with a different style) ... wip
 * [x] general: add the ability to serve favicon and a static page as home page (add related content even here), of course using related plugins ... wip
 * [x] general: replace 'simple-get' with 'undici ... wip
@@ -35,9 +36,7 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] content: update README and CHANGELOG ... wip
 * [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... wip
 
-* [x] general: later update to Node.js 14 LTS (14.15.0)  and so output ES2020/ES11 or ES2021/ES12 (but partial support for it); for some info look at [Recommended Node TSConfig settings - TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping), [here](https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579), etc; anyway, export all as native ES Modules (ESM), important; as a sample take this great example: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
-
-* [x] general: later update to Node.js 16 LTS (16.13.0) and so output ES2022/ES13 or at least ES2021/ES12; ensure to expose all only as ES Modules (ESM), no more CommonJS ...
+* [x] general: later update to Node.js 16 LTS (16.13.0) and so output ES2022/ES13 or at least ES2021/ES12; ensure to expose all only as ES Modules (ESM), no more CommonJS ... wip
 
 
 ---------------
@@ -77,6 +76,10 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: check if publish this app at [Heroku](https://www.heroku.com/) but using Docker containers, some info even [here](https://dev.to/analythium/deploying-shiny-apps-to-heroku-with-docker-and-github-actions-2687); then add a bagde in README to point to it ... maybe later
 * [x] general: add on 'Open in VS Code' badge in the README, as seen [here](https://code.visualstudio.com/updates/v1_58#_open-in-vs-code-badge) ... no, it's no more present in that page, not sure it still works that way
 * [x] general: for a general structure of a more complex TypeScript project (with some  microservices, some shared libraries, etc), look ev en at [Make sharing TypeScript code and types quick and easy - LogRocket Blog](https://blog.logrocket.com/make-sharing-typescript-code-types-quick-easy/) and related sources [ashleydavis/sharing-typescript-code-libraries - GitHub](https://github.com/ashleydavis/sharing-typescript-code-libraries) ... maybe later, in general useful but here I'd have to move all current code in a new subfolder and add at least one shared library (for example in a './libs' folder)
+* [x] general: update requirements to Node.js 12 LTS ... ok but even better, require Node.js 14 LTS now, but at the moment don't switch to ESM modules (do it later)
+* [x] general: update TypeScript (TS) to 4.5.x ... ok, done
+* [x] general: update code to use only ESM modules (no more Node.js require statements, etc) ... maybe later, and anyway with Node.js 14 LTS
+* [x] general: update to Node.js 14 LTS (14.15.0) and so output ES2020/ES11 or ES2021/ES12 (but partial support for it); for some info look at [Recommended Node TSConfig settings - TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping), etc ... ok
 
 
 ---------------

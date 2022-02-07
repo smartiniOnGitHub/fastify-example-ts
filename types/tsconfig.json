@@ -13,7 +13,7 @@
     "sourceMap": false,
     "strict": true,
     "strictNullChecks": true,
-    "target": "ES2019"
+    "target": "ES2020"
   },
   "include": [
     "/types/*.test-d.ts",
