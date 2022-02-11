@@ -20,9 +20,7 @@
 /* eslint callback-return: "off" */
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
-// const assert = require('assert').strict
 const test = require('tap').test
-// const tap = require('tap')
 
 // load environment specific variables from '.env' file (if any) into process.env ...
 // const dotenv = require('dotenv')
