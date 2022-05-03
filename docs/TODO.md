@@ -2,8 +2,9 @@
 
 ## TODO
 
+* [x] general: check if install even 'ts-node' as dev dependency; for example look at [justDare/TypeScript-Node-Docker - GitHub](https://github.com/justDare/TypeScript-Node-Docker), [ts-node - npmjs](https://www.npmjs.com/package/ts-node) ... check if add to dev dependency (like `"ts-node": "^10.7.0",`), but configure it; it could be useful with nodemon in the DEV config, to support auto-reload/auto-recompilation of sources ... wip
+* [x] general: add Docker related stuff, even a DEV version with hot reloading and local sources mounted in the container as volumes; see previous point ... wip
 * [x] general: use some new features of TypeScript 4.5.x, like [Import Assertions - TypeScript 4.5 - TypeScript blog](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5/#import-assertions) to load json data (maybe even css), etc ... wip
-* [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc) ... wip
 * [x] general: tests made in TypeScript: use the Fastify server configured in its own source, and ensure routes defined works in the right way (via injection) ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
@@ -80,6 +81,8 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: update TypeScript (TS) to 4.5.x ... ok, done
 * [x] general: update code to use only ESM modules (no more Node.js require statements, etc) ... maybe later, and anyway with Node.js 14 LTS
 * [x] general: update to Node.js 14 LTS (14.15.0) and so output ES2020/ES11 or ES2021/ES12 (but partial support for it); for some info look at [Recommended Node TSConfig settings - TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping), etc ... ok
+* [x] general: use some new features of the upcoming TypeScript 4.7.x, see: [Announcing TypeScript 4.7 Beta - TypeScript Blog](https://devblogs.microsoft.com/typescript/announcing-typescript-4-7-beta/), like full compatibility/support for ES Modules (ESM), etc; see even [A Proposal For Type Syntax in JavaScript - TypeScript Blog](https://devblogs.microsoft.com/typescript/a-proposal-for-type-syntax-in-javascript/) (but for later Node.js/JavaScript releases), etc ... maybe later
+* [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc); if possible even a DEV version with hot reloading and local sources mounted in the container as volumes; see: [here](https://medium.com/@VincentSchoener/development-with-docker-and-typescript-75956e1af4ca), [here](https://medium.com/@VincentSchoener/development-of-nodejs-application-with-docker-and-typescript-part-2-4dd51c1e7766), [here](https://medium.com/@VincentSchoener/optimize-docker-image-for-production-with-extra-build-production-and-system-packages-dacfcf1f8cc4), [here](https://towardsdev.com/writing-a-docker-file-for-your-node-js-typescript-micro-service-c5170b957893), [here](https://dev.to/dariansampare/setting-up-docker-typescript-node-hot-reloading-code-changes-in-a-running-container-2b2f), etc ... ok, but do it in a dedicated task here
 
 
 ---------------
