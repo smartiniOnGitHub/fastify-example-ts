@@ -1,9 +1,6 @@
 # fastify-example-ts
 
-  [![Docker Pulls](https://img.shields.io/docker/pulls/smartiniatdocker09/fastify-example-ts.svg)](https://hub.docker.com/r/smartiniatdocker09/fastify-example-ts/)
   [![Code Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
-  [![dependencies Status](https://david-dm.org/smartiniOnGitHub/fastify-example-ts/status.svg)](https://david-dm.org/smartiniOnGitHub/fastify-example-ts)
-  [![devDependencies Status](https://david-dm.org/smartiniOnGitHub/fastify-example-ts/dev-status.svg)](https://david-dm.org/smartiniOnGitHub/fastify-example-ts?type=dev)
   [![Known Vulnerabilities](https://snyk.io//test/github/smartiniOnGitHub/fastify-example-ts/badge.svg?targetFile=package.json)](https://snyk.io//test/github/smartiniOnGitHub/fastify-example-ts?targetFile=package.json)
 
 Example webapp with Fastify, made in TypeScript
@@ -34,27 +31,6 @@ Of course you need a local installation of Docker (recent, if possible latest),
 but nothing other.
 
 
-## Setup and run with Docker images at DockerHub
-
-A simpler way to run the webapp is by using published images at DockerHub: 
-[smartiniatdocker09/fastify-example-ts](https://hub.docker.com/r/smartiniatdocker09/fastify-example-ts/).
-Default images are based on default Node.js Docker image and contains 
-development dependencies too (to reload content, run tests, etc), BASH shell, etc; 
-there is even a variant one based on Node.js Alpine Linux image 
-which is minimal (smaller, a lot) and is tailored for running in Production 
-(dedicated user for running the webapp, no dev dependencies, no reload, etc).
-
-For example, you can run directly with:
-`docker run -d -p 8000:8000 -t smartiniatdocker09/fastify-example-ts:latest-alpine`
-and browse to [localhost:8000](http://localhost:8000).
-Published Docker tags are 'latest' / 'latest-alpine', 
-and for any tag, there is even the 'x.y.z-alpine' variant.
-For more info look at [tags - smartiniatdocker09/fastify-example-ts](https://hub.docker.com/r/smartiniatdocker09/fastify-example-ts/tags).
-
-Of course you need a local installation of Docker (recent, if possible latest), 
-but nothing other.
-
-
 ## Others
 
 To run a development server (with hot reload enabled) instead execute this:
@@ -67,7 +43,7 @@ For other custom commands look the 'scripts' section inside 'package.json'.
 
 ## Requirements
 
-Fastify ^3.0.0, Node.js 14 LTS (14.15.0) or later.
+Fastify ^4.0.0, Node.js 14 LTS (14.15.0) or higher.
 
 
 ## Note

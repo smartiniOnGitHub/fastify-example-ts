@@ -28,7 +28,7 @@ server.get('/', async (request, reply) => {
   return 'Hello from Fastify and TypeScript.'
 })
 
-server.listen(8000, '0.0.0.0', (err, address) => {
+server.listen({ port: 8000, host: '0.0.0.0' }, (err, address) => {
   if (err) {
     console.error(err)
     process.exit(1)

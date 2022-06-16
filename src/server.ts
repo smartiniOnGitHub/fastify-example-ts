@@ -33,7 +33,7 @@ const fastify = Fastify()
 const server = require('./build-server')
 fastify.register(server)
 
-fastify.listen(8000, '0.0.0.0', (err, address) => {
+fastify.listen({ port: 8000, host: '0.0.0.0' }, (err, address) => {
   if (err) {
     console.error(err)
     process.exit(1)

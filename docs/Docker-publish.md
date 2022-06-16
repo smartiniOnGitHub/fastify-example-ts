@@ -25,6 +25,10 @@ So manual publish shouldn't be needed, anyway it's here just for reference.
 Image tags are at [tags - smartiniatdocker09/fastify-example-ts](https://hub.docker.com/r/smartiniatdocker09/fastify-example-ts/tags), and you can find tags like:
 'latest' / 'latest-alpine' and even '2.2.0' / '2.2.0-alpine', etc ...
 
+Note: since some time all this is **no more available** without a Pro subscription; 
+so to avoid stale/outdated images (with security vulnerabilities inside, etc) 
+I **deleted** that repo and all related images and tags.
+
 
 ### Manual Publish
 
