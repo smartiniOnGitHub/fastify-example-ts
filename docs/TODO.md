@@ -11,15 +11,15 @@
 * [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... wip
 
 * [x] general: bump next release (or do not change version in 'package.json' for now, and tag sources at release end) ... wip
-* [x] general: update 'is-docker' to '^3.0.0' but it requires this project to use ESM, see [here](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) for more info ... wip
-* [x] general: after the update of requirements to Node.js 14 LTS (or 16 LTS, or at least 12 LTS), migrate to ESM modules, so: update 'package.json' with `"type": "module",` and related settings, then update TypeScript output to be 'es2020' with support for ES Modules (esm), and update all import statements using esm syntax, for example:
+* [x] general: update 'is-docker' to '^3.0.0' ... done, but it requires this project to use ESM, see [here](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) for more info ... wip
+* [x] general: after the update of requirements to Node.js 14 LTS (or 16 LTS), migrate to ESM modules, so: update 'package.json' with `"type": "module",` and related settings, then update TypeScript output to be 'es2020' with support for ES Modules (esm), and update all import statements using esm syntax, for example:
 ```
 // import assert from 'node:assert'
 import { strict as assert } from 'node:assert'
 import tap, { Test } from 'tap'
 ```
 and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... wip
-* [x] general: after the update to Node.js 14 LTS (14.15.0), and so output ES2020/ES11, export all as native ES Modules (ESM), important; for better TypeScript settings with ESM and CommonJS look even [here](https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579), etc ... wip
+* [x] general: after the update to Node.js 14 LTS (14.15.0), and so output ES2020/ES11, export all as native ES Modules (ESM), important; for better TypeScript settings with ESM and CommonJS look even [here](https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579), etc; better, wait for TypeScript 4.9.x with improved support for ESM ... wip
 * [x] general: update code like this great example using ESM: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
 * [x] general: check if split main server in: server creation and server start, to be able to reuse server creation even in tests and inject calls in it; for example see 'fastify-starter' at [CodeSandbox](https://codesandbox.io) ... wip
 * [x] general: use a modern and good example for Fastify 3.x as a reference for some stuff here, for example [delvedor/fastify-101 - GitHub](https://github.com/delvedor/fastify-101), even if not in TypeScript ... wip

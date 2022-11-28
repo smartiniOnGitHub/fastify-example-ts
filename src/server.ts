@@ -32,6 +32,8 @@ const fastify = Fastify()
 // for now, register it as a Node.js classic module (commonjs)
 const server = require('./build-server')
 fastify.register(server)
+fastify.register(require('./routes')) // add some routes
+fastify.register(require('./features')) // add application features
 
 fastify.listen({ port: 8000, host: '0.0.0.0' }, (err, address) => {
   if (err) {
