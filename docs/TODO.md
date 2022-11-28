@@ -2,9 +2,7 @@
 
 ## TODO
 
-* [x] general: check if install even 'ts-node' as dev dependency; for example look at [justDare/TypeScript-Node-Docker - GitHub](https://github.com/justDare/TypeScript-Node-Docker), [ts-node - npmjs](https://www.npmjs.com/package/ts-node) ... check if add to dev dependency (like `"ts-node": "^10.7.0",`), but configure it; it could be useful with nodemon in the DEV config, to support auto-reload/auto-recompilation of sources ... wip
-* [x] general: add Docker related stuff, even a DEV version with hot reloading and local sources mounted in the container as volumes; see previous point ... wip
-* [x] general: use some new features of TypeScript 4.5.x, like [Import Assertions - TypeScript 4.5 - TypeScript blog](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5/#import-assertions) to load json data (maybe even css), etc ... wip
+* [x] general: ensure some plugins (for example 'fastify-healthcheck' work with latest TypeScript (currently '4.9.3'), since '4.9.0' there are some problems with plugin types (so plugin types need to be updated) ... wip
 * [x] general: tests made in TypeScript: use the Fastify server configured in its own source, and ensure routes defined works in the right way (via injection) ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
@@ -85,6 +83,10 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: add Docker related stuff (npm custom commands, Dockerfile/s, etc); if possible even a DEV version with hot reloading and local sources mounted in the container as volumes; see: [here](https://medium.com/@VincentSchoener/development-with-docker-and-typescript-75956e1af4ca), [here](https://medium.com/@VincentSchoener/development-of-nodejs-application-with-docker-and-typescript-part-2-4dd51c1e7766), [here](https://medium.com/@VincentSchoener/optimize-docker-image-for-production-with-extra-build-production-and-system-packages-dacfcf1f8cc4), [here](https://towardsdev.com/writing-a-docker-file-for-your-node-js-typescript-micro-service-c5170b957893), [here](https://dev.to/dariansampare/setting-up-docker-typescript-node-hot-reloading-code-changes-in-a-running-container-2b2f), etc ... ok, but do it in a dedicated task here
 * [x] general: delete related project at DockerHub (so all, even images, tags, build automation, etc) because now is outdated (without a Pro subscription), with security vulnerabilities inside, etc ... ok, and updated related doc file 'docs/Docker-publish.md'
 * [x] general: bump release (major), to support Fastify v4 and Node.js 14 LTS (14.15.0) then update requirements even in README and in CHANGELOG; see [Migration Guide: V3 to V4 - Fastify - GitHub](https://github.com/fastify/fastify/blob/main/docs/Migration-Guide-V4.md) ... ok, done but without bump release here
+* [x] general: check if install even 'ts-node' as dev dependency; for example look at [justDare/TypeScript-Node-Docker - GitHub](https://github.com/justDare/TypeScript-Node-Docker), [ts-node - npmjs](https://www.npmjs.com/package/ts-node) ... check if add to dev dependency (like `"ts-node": "^10.7.0",`), but configure it; it could be useful with nodemon in the DEV config, to support auto-reload/auto-recompilation of sources ... maybe later
+* [x] general: add Docker related stuff, even a DEV version with hot reloading and local sources mounted in the container as volumes; see previous point ... maybe later
+* [x] general: use some new features of TypeScript 4.5.x, like [Import Assertions - TypeScript 4.5 - TypeScript blog](https://devblogs.microsoft.com/typescript/announcing-typescript-4-5/#import-assertions) to load json data (maybe even css), etc ... maybe later
+* [x] general: update dependencies to latest ... ok, so for example now it requires Fastify '^4.10.2' and TypeScript '^4.9.3' (only for development)
 
 
 ---------------
