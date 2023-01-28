@@ -30,6 +30,8 @@ import { FastifyInstance, FastifyReply, FastifyRequest, FastifyServerOptions } f
 // configuration for enabled/disabled features
 const featuresEnabled = {
   // TODO: ...
+  favicon: true,
+  // favicon: utils.featureIsEnabled(true, utils.fromEnv('FEATURE_FAVICON_DISABLE'), false),
   healthcheck: true
   // healthcheck: utils.featureIsEnabled(true, utils.fromEnv('FEATURE_HEALTHCHECK_DISABLE'), false),
   // others ...
@@ -45,6 +47,12 @@ async function features (fastify: FastifyInstance, opts: FastifyServerOptions) {
 
   // define an object to return, it could contain useful data/references, depending on features enabled
   const features = {}
+
+  if (featuresEnabled.favicon) {
+    // fastify-favicon, example using only plugin default options
+    fastify.register(require('fastify-favicon'), {
+    })
+  }
 
   if (featuresEnabled.healthcheck) {
     // fastify-healthcheck, example with null or empty options, using only plugin default options
