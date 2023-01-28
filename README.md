@@ -12,10 +12,21 @@ To complete project setup, do:
 ```
 npm install
 ```
-
-and run with
+then run tests (optional):
+```
+npm test
+```
+then do a build of TypeScript code (results in the './dist' folder):
+```
+npm run build
+```
+last, run with
 ```
 npm start
+```
+otherwise perform a build and start with:
+```
+npm run start:dev
 ```
 
 then point your browser to [localhost:8000](http://localhost:8000)
