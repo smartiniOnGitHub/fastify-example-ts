@@ -38,6 +38,7 @@ const sampleRoutes = [
 // manually define the list of some routes exposed by some loaded plugins
 const pluginRoutes = [
   // others ...
+  { link: 'favicon', url: '/favicon.ico', description: "Expose the favicon, by 'fastify-favicon' plugin" },
   { link: 'healthcheck', url: '/health', description: "Expose an healthcheck, by 'fastify-healthcheck' plugin" }
 ].sort(utils.compareProperties('link')) // opt. add sort order, 'asc' (by default) or 'desc'
 
