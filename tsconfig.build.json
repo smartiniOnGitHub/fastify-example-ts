@@ -1,0 +1,10 @@
+// tsconfig.build.json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false,
+    "declarationMap": false,
+    "removeComments": true
+  },
+  "exclude": ["**/*.test.ts", "lib", "node_modules"]
+}
