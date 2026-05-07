@@ -30,7 +30,7 @@ const Fastify = require('fastify')
 const App = require('../dist/build-server')
 
 // some basic test, but using the async/await syntax
-test('Basic', async t => {
+test('Basic', async (t: any) => {
   // t.plan(2) // ok but use t.end() now, without having to specify/update the right number of tests
 
   const fastify = Fastify()

@@ -44,7 +44,7 @@ tap.ok(utilModule.isUndefinedOrNull)
 tap.ok(utilModule.isStringEmpty)
 
 // other tests, using a different (better) syntax
-test('util, string empty or not', (t) => {
+test('util, string empty or not', (t: any) => {
   // t.plan(2) // ok but use t.end() now, without having to specify/update the right number of tests
 
   t.ok(assert)

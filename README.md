@@ -25,6 +25,14 @@ then do a build of TypeScript code (results in the './dist' folder):
 npm run build
 ```
 
+The build uses `tsconfig.build.json` and emits compiled JavaScript files directly under `./dist/`, for example:
+
+```text
+./dist/server.js
+./dist/build-server.js
+./dist/utils.js
+```
+
 last, run with
 
 ```shell

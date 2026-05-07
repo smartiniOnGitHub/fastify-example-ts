@@ -5,8 +5,8 @@
   "main": "dist/server",
   "scripts": {
     "audit:log": "npm audit > ./temp/audit.log",
-    "build:watch": "tsc -p tsconfig.json --watch --outDir ./dist",
-    "build": "tsc -p tsconfig.json --outDir ./dist",
+    "build:watch": "tsc -p tsconfig.build.json --watch --outDir ./dist",
+    "build": "tsc -p tsconfig.build.json --outDir ./dist",
     "cache:cleanup": "npm cache clean --force",
     "cache:verify": "npm cache verify",
     "clean:install": "rm -rf ./package-lock.json ./node_modules/",

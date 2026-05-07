@@ -16,6 +16,8 @@
     "types": ["node"],
     // and npm install -D @types/node
     "moduleResolution": "NodeNext", // manually added for nodejs
+    // "esModuleInterop": true, // manually added, but keep commented
+    // "allowSyntheticDefaultImports": true, // manually added, but keep commented
 
     // Other Outputs
     "sourceMap": true,
@@ -37,7 +39,7 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false, // changed from the recommended value to avoid issues with nodejs and ts-node
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
