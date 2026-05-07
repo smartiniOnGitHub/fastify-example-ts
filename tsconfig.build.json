@@ -3,10 +3,13 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": "./src",
-    "sourceMap": false,
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": true,
+    "sourceMap": true,
     "declarationMap": false,
     "removeComments": true
   },
   "include": ["src/**/*"],
-  "exclude": ["**/*.test.ts", "lib", "node_modules"]
+  "exclude": ["**/*.test.ts", "dist", "lib", "node_modules"]
 }

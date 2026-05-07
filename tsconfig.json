@@ -48,5 +48,5 @@
   // "include": ["src/**/*"], // later check if enable this and related line
   // "exclude": ["node_modules", "**/*.test.ts"]
   "include": ["src/**/*", "**/*.test.ts"], // if enabled, ensure to exclude dist/test files in package etc
-  "exclude": ["lib", "node_modules"]
+  "exclude": ["dist", "lib", "node_modules"]
 }

@@ -2,11 +2,8 @@
 
 ## TODO
 
-* [x] general: ensure all works with latest TypeScript (currently '6.0.3'); this will require re-generate and update 'tsconfig.json' file; start by disabling my plugins; use the extension file `tsconfig.build.json` for production builds; it now emits compiled output directly under `./dist/` from `./src/`; check/fix TypeScript config file for types (in the 'types/' folder) need to be updated/fixed too ... wip
-* [x] general: update code for Fastify v5 and Node.js 20 LTS (from 20.9.0); for more info, look even at [V5 Migration Guide - Fastify docs](https://fastify.dev/docs/latest/Guides/Migration-Guide-V5/), etc; do all in a branch ... lint all MarkDown files, update all dependencies, copyright year, code, my plugins to latest release, etc; update even TAP to latest but migrate/update its config file and command lines; removed dependency on 'is-docker' because since '^4.0.0' it's exported only as an ESM module, so wrote a function to replace it synchronously but that detects Docker and Podman (put even under utils, but not referenced from constants source file to avoid unneeded dependencies between sources); removed the (no more necessary) library 'make-promises-safe' ... wip
-* [x] general: check if change package type to ES Modules (ESM) in 'package.json', but ensure Node.js `require` statements works (or if they need to be fixed/updated) ... wip
-* [x] general: update/fix tests ... wip
-* [x] general: update/fix lint comments (it could require a dedicated plugin) and related npm custom commands; check if add a minimal JavaScript file (.js) to esure lint of js files works ... wip
+* [x] general: update code for Fastify v5 and Node.js 20 LTS (from 20.9.0), (continuation) ... lint all MarkDown files, update all dependencies, copyright year, code, my plugins to latest release, etc; update even TAP to latest but migrate/update its config file and command lines; removed dependency on 'is-docker' because since '^4.0.0' it's exported only as an ESM module, so wrote a function to replace it synchronously but that detects Docker and Podman (put even under utils, but not referenced from constants source file to avoid unneeded dependencies between sources); removed the (no more necessary) library 'make-promises-safe' ... wip
+* [x] general: update/fix lint comments (it could require a dedicated plugin) and related npm custom commands; check if add a minimal JavaScript file (.js) to esure lint of js files works ... added a 'server-minimal.js' source file, but find a way to perform type check and build via TypeScript (even if not strictly necessary, but it's better for consistency) ... wip
 * [x] general: update code for Fastify v5, continuation: temporarily enable the sending of messages to NATS (change current config item in the '.env' file, from `FEATURE_NATS_DISABLE=true` to `FEATURE_NATS_DISABLE=false`), then re-disable (it's a better default setting) ... wip
 * [x] general: ensure Docker images works fine ... wip
 * [x] general: update code for Fastify v5, continuation: update CHANGELOG (with breaking and normal changes), README, etc ... last, update release date in CHANGELOG, then commit and push last changes for this release ... wip
@@ -105,5 +102,11 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: update dependencies to latest ... ok, so for example now it requires Fastify '^4.10.2' and TypeScript '^4.9.3' (only for development)
 * [x] general: fix lint problems with MarkDown files ... ok
 * [x] general: add/update root files ... ok
+
+* [x] general: update code for Fastify v5 and Node.js 20 LTS (from 20.9.0); for more info, look even at [V5 Migration Guide - Fastify docs](https://fastify.dev/docs/latest/Guides/Migration-Guide-V5/), etc; do all in a branch ... ok, done; see steps in a dedicated line
+* [x] general: ensure all works with latest TypeScript (currently '6.0.3'); this will require re-generate and update 'tsconfig.json' file; start by disabling my plugins; use the extension file `tsconfig.build.json` for production builds; it now emits compiled output directly under `./dist/` from `./src/`; check/fix TypeScript config file for types (in the 'types/' folder) need to be updated/fixed too ... ok
+* [x] general: update/fix tests ... ok
+* [x] general: check if change package type to ES Modules (ESM) in 'package.json', but ensure Node.js `require` statements works (or if they need to be fixed/updated) ... maybe later
+* [x] general: update TypeScript config files to ensure no TypeScript files (.ts and similar) are present in the distribution folder ('./dist/'), but only type files (.d.ts); enable even the support of JavaScript (.js and similar) files and enable type check on them; then enable source maps generation ... ok, done; for safety, exclude the distribution folder too; added npm custom command to cleaup the distribution folder in 'prebuild' phase (automatically called) and another custom command to show its content
 
 ---------------
