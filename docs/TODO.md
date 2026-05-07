@@ -3,7 +3,10 @@
 ## TODO
 
 * [x] general: use the new function the check if the application/server if it's running in a container ... wip
-* [x] general: update/fix lint comments (it could require a dedicated plugin) ... wip
+* [x] general: update/fix lint comments (it could require a dedicated plugin) in js and ts source files ... wip
+* [x] general: check if import tap type for Test, to be able to update '(t: Any)' to '(t: Test)', etc ... wip
+* [x] general: ensure all tests are good ... wip
+* [x] general: update code for Fastify v5, continuation: ensure all routes defined in the project and all routes/features exposed by my plugin works ... wip
 * [x] general: update code for Fastify v5, continuation: temporarily enable the sending of messages to NATS (change current config item in the '.env' file, from `FEATURE_NATS_DISABLE=true` to `FEATURE_NATS_DISABLE=false`), then re-disable (it's a better default setting) ... wip
 * [x] general: ensure Docker images works fine ... wip
 * [x] general: update code for Fastify v5, continuation: update CHANGELOG (with breaking and normal changes), README, etc ... last, update release date in CHANGELOG, then commit and push last changes for this release ... wip
@@ -20,22 +23,7 @@
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
 * [x] content: add initial (but minimal) content, start by publishing 'favicon.ico' (maybe with my plugin) ... wip
 * [x] content: update README and CHANGELOG ... wip
-* [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... wip
 
-* [x] general: bump next release (or do not change version in 'package.json' for now, and tag sources at release end) ... wip
-* [x] general: update 'is-docker' to '^3.0.0' ... done, but it requires this project to use ESM, see <https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c> for more info ... wip
-* [x] general: after the update of requirements to Node.js 14 LTS (or 16 LTS), migrate to ESM modules, so: update 'package.json' with `"type": "module",` and related settings, then update TypeScript output to be 'es2020' with support for ES Modules (esm), and update all import statements using esm syntax, for example:
-
-```js
-// import assert from 'node:assert'
-import { strict as assert } from 'node:assert'
-import tap, { Test } from 'tap'
-```
-
-and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... wip
-
-* [x] general: after the update to Node.js 14 LTS (14.15.0), and so output ES2020/ES11, export all as native ES Modules (ESM), important; for better TypeScript settings with ESM and CommonJS look even at <https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579>, etc; better, wait for TypeScript 4.9.x with improved support for ESM ... wip
-* [x] general: update code like this great example using ESM: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... wip
 * [x] general: check if split main server in: server creation and server start, to be able to reuse server creation even in tests and inject calls in it; for example see 'fastify-starter' at [CodeSandbox](https://codesandbox.io) ... wip
 * [x] general: use a modern and good example for Fastify 3.x as a reference for some stuff here, for example [delvedor/fastify-101 - GitHub](https://github.com/delvedor/fastify-101), even if not in TypeScript ... wip
 * [x] general: add JSON Schema to TypeScript, as seen for example <https://www.fastify.io/docs/latest/TypeScript/> (same doc seen in GitHub, only with a different style) ... wip
@@ -102,6 +90,22 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: update dependencies to latest ... ok, so for example now it requires Fastify '^4.10.2' and TypeScript '^4.9.3' (only for development)
 * [x] general: fix lint problems with MarkDown files ... ok
 * [x] general: add/update root files ... ok
+
+* [x] general: bump next release (or do not change version in 'package.json' for now, and tag sources at release end) ... ok
+* [x] general: update 'is-docker' to '^3.0.0' ... done, but it requires this project to use ESM, see <https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c> for more info ... maybe later
+* [x] general: after the update of requirements to Node.js 20 LTS (or later LTS), migrate to ESM modules, so: update 'package.json' with `"type": "module",` and related settings, then update TypeScript output to be 'es2023' (minimum needed is 'es2020' from Node.js 14 LTS or 16 LTS) with support for ES Modules (esm), and update all import statements using esm syntax, for example:
+
+```js
+// import assert from 'node:assert'
+import { strict as assert } from 'node:assert'
+import tap, { Test } from 'tap'
+```
+
+and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... wip
+
+* [x] general: after the update to Node.js 14 LTS (14.15.0), and so output ES2020/ES11, export all as native ES Modules (ESM), important; for better TypeScript settings with ESM and CommonJS look even at <https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579>, etc; better, wait for TypeScript 4.9.x with improved support for ESM ... maybe later
+* [x] general: update code like this great example using ESM: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... maybe later
+* [x] general: tag sources (check if with 0.x.y or if with a timestamp) ... maybe later
 
 * [x] general: update code for Fastify v5 and Node.js 20 LTS (from 20.9.0); for more info, look even at [V5 Migration Guide - Fastify docs](https://fastify.dev/docs/latest/Guides/Migration-Guide-V5/), etc; do all in a branch ... ok, done; see steps in a dedicated line
 * [x] general: ensure all works with latest TypeScript (currently '6.0.3'); this will require re-generate and update 'tsconfig.json' file; start by disabling my plugins; use the extension file `tsconfig.build.json` for production builds; it now emits compiled output directly under `./dist/` from `./src/`; check/fix TypeScript config file for types (in the 'types/' folder) need to be updated/fixed too ... ok

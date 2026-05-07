@@ -25,7 +25,7 @@ import Fastify from 'fastify'
 const server = Fastify()
 
 server.get('/', async (request, reply) => {
-  return 'Hello from Fastify and TypeScript.'
+  return 'Hello from Fastify and JavaScript.'
 })
 
 server.listen({ port: 8000, host: '0.0.0.0' }, (err, address) => {
