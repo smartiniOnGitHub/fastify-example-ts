@@ -3,7 +3,7 @@
 ## TODO
 
 * [x] general: use the new function the check if the application/server if it's running in a container ... wip
-* [x] general: update/fix lint comments (it could require a dedicated plugin) in js and ts source files ... wip
+* [x] general: update/fix lint comments (it could require a dedicated plugin) in js and ts source files; and remove comments no more needed or valid in ts source files ... wip
 * [x] general: check if import tap type for Test, to be able to update '(t: Any)' to '(t: Test)', etc ... wip
 * [x] general: ensure all tests are good ... wip
 * [x] general: update code for Fastify v5, continuation: ensure all routes defined in the project and all routes/features exposed by my plugin works ... wip
@@ -14,7 +14,7 @@
 * [x] general: update code for Fastify v5, continuation: generate and inspect source docs, then publish in usual repository; usually as a post-release step ... wip
 
 * [x] general: bump maintenance release 5.x ... wip
-* [x] general: update some libraries to use more modern ones, like Fastify: remove 'tap' and use Node.js integrated test libraries, change: 'jsdoc' -> 'esdoc' (maybe, but to check), 'standard' -> 'neostandard' and 'eslint' (update some rules, add its plugins as required) or evaluate to use 'oxlint' ... wip
+* [x] general: update some libraries to use more modern ones, like Fastify: remove 'tap' and use Node.js integrated test libraries (in dev mode, use its watch mode), change: 'jsdoc' -> 'esdoc' (maybe, but to check), 'standard' -> 'neostandard' and 'eslint' (update some rules, add its plugins as required) or evaluate to use 'oxlint' ... wip
 * [x] general: update some libraries to use more modern ones, check if add 'prettier' to format sources (instead of 'standard' and add related eslint plugin), and maybe change its default setting for quotes from `"singleQuote": false` to `"singleQuote": true` and add npm custom commands for: 'format:check', 'format:fix', 'format' that calls 'format:check' ... wip
 * [x] general: setup some automation to make builds via GitHub Actions and maybe even generate and publish container images (at GitHub or at DockerHub, but only after a tag, or at least trigger them manually) and if possible tag even as 'latest'; update README with some badge or at least some links ... wip
 * [x] general: ensure some plugins (for example 'fastify-healthcheck') work with latest TypeScript (currently '6.0.3'), since '4.9.0' there are some problems with plugin types (so plugin types need to be updated) ... wip

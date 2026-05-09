@@ -22,6 +22,7 @@ const fs = require('fs')
 /* eslint no-undef: "off" */
 /* eslint no-unused-vars: "off" */
 /* eslint callback-return: "off" */
+/* eslint no-inner-declarations: "off" */
 /* eslint no-process-env: "off" */
 /* eslint no-eval: "off" */
 /* eslint @typescript-eslint/no-explicit-any: "off" */
@@ -565,7 +566,6 @@ function isContainer (): boolean {
     return false
   }
 }
-
 
 export = {
   buildError,

@@ -19,8 +19,7 @@ import Fastify from 'fastify'
 /* eslint no-undef: "off" */
 /* eslint no-unused-vars: "off" */
 /* eslint callback-return: "off" */
-/* eslint no-process-env: "off" */
-/* eslint @typescript-eslint/no-unused-vars: "off" */
+/* eslint no-inner-declarations: "off" */
 
 const server = Fastify()
 

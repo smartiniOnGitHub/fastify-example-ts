@@ -19,7 +19,7 @@ import Fastify from 'fastify'
 /* eslint no-undef: "off" */
 /* eslint no-unused-vars: "off" */
 /* eslint callback-return: "off" */
-/* eslint no-process-env: "off" */
+/* eslint no-inner-declarations: "off" */
 /* eslint @typescript-eslint/no-explicit-any: "off" */
 /* eslint @typescript-eslint/explicit-module-boundary-types: "off" */
 /* eslint @typescript-eslint/no-unused-vars: "off" */

@@ -18,6 +18,7 @@
 /* eslint no-undef: "off" */
 /* eslint no-unused-vars: "off" */
 /* eslint callback-return: "off" */
+/* eslint no-inner-declarations: "off" */
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 const assert = require('assert').strict
