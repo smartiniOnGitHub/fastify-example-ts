@@ -6,9 +6,10 @@
 * [x] general: update/fix lint comments (it could require a dedicated plugin) in js and ts source files; and remove comments no more needed or valid in ts source files ... wip
 * [x] general: check if import tap type for Test, to be able to update '(t: Any)' to '(t: Test)', etc ... wip
 * [x] general: ensure all tests are good ... wip
-* [x] general: update code for Fastify v5, continuation: ensure all routes defined in the project and all routes/features exposed by my plugin works ... wip
+* [x] general: update code for Fastify v5, continuation: ensure all routes defined in the project and all routes/features exposed by my plugins works ... wip
 * [x] general: update code for Fastify v5, continuation: temporarily enable the sending of messages to NATS (change current config item in the '.env' file, from `FEATURE_NATS_DISABLE=true` to `FEATURE_NATS_DISABLE=false`), then re-disable (it's a better default setting) ... wip
-* [x] general: ensure Docker images works fine ... wip
+* [x] general: update dependencies to latest version (check for requirements and breaking changes before), so even to latest TypeScript 7.x and ensure all is good ... wip
+* [x] general: ensure Docker images works fine; check if use distroless images ... wip
 * [x] general: update code for Fastify v5, continuation: update CHANGELOG (with breaking and normal changes), README, etc ... last, update release date in CHANGELOG, then commit and push last changes for this release ... wip
 * [x] general: restore (default setting) in '.npmrc' (to `ignore-scripts=true`) so that during `npm install` and other npm commands, no additional scripts could run, for better safety; this could require to update my npm custom commands to prepend some cleanup tasks (no more called automatically when disabling such feature) ... wip
 * [x] general: update code for Fastify v5, continuation: tag sources ... wip
@@ -117,5 +118,6 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: update/fix lint comments (it could require a dedicated plugin) and related npm custom commands; check if add a minimal JavaScript file (.js) to esure lint of js files works ... added a 'server-minimal.js' source file, but find a way to perform type check and build via TypeScript (even if not strictly necessary, but it's better for consistency) ... ok; note that to have npm run 'pre*' commands, had to update the setting to `ignore-scripts=false` into '.npmrc' (otherwise put same commands as before in the normal command for example for 'test' like `npm run lint && npm run test:unit`)
 * [x] general: update npm custom commands related to build and dist ... ok; note that even in dev build I need to specify the build typescript config file or files/folders generated will be different (using the default config present in the project); if needed tweak some settings in main typescript config file, but for now keep it general (as-is)
 * [x] general: restore (default setting) in '.npmrc' (to `package-lock=true`) so that during `npm install` package locking is set and used, for better reproducible setups ... maybe later, for now I prefer to keep such settings floating; after the indroduction even in npm of cool-down period (by default to not download/use dependencies newer than a specified period of time since publishing) things should be good enough the same
+* [x] general: update dependencies using current semver constraints (so even TypeScript to latest 6.x) and ansure all is good ... ok, but note that doing an audit I found that @fastify/static has an high severity vulnerability, so it must be updated at least to 10.1.3, which is a breaking change, see next upate dependencies task
 
 ---------------
