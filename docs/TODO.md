@@ -4,7 +4,6 @@
 
 * [x] general: use the new function the check if the application/server if it's running in a container ... wip
 * [x] general: update/fix lint comments (it could require a dedicated plugin) in js and ts source files; and remove comments no more needed or valid in ts source files ... wip
-* [x] general: check if import tap type for Test, to be able to update '(t: Any)' to '(t: Test)', etc ... wip
 * [x] general: ensure all tests are good ... wip
 * [x] general: update code for Fastify v5, continuation: ensure all routes defined in the project and all routes/features exposed by my plugins works ... wip
 * [x] general: update code for Fastify v5, continuation: temporarily enable the sending of messages to NATS (change current config item in the '.env' file, from `FEATURE_NATS_DISABLE=true` to `FEATURE_NATS_DISABLE=false`), then re-disable (it's a better default setting) ... wip
@@ -18,17 +17,15 @@
 * [x] general: update some libraries to use more modern ones, check if add 'prettier' to format sources (instead of 'standard' and add related eslint plugin), and maybe change its default setting for quotes from `"singleQuote": false` to `"singleQuote": true` and add npm custom commands for: 'format:check', 'format:fix', 'format' that calls 'format:check' ... wip
 * [x] general: ensure Docker images works fine; use distroless images if possible ... wip
 * [x] general: setup some automation to make builds via GitHub Actions and maybe even generate and publish container images (at GitHub or at DockerHub, but only after a tag, or at least trigger them manually) and if possible tag even as 'latest'; update README with some badge or at least some links ... wip
-* [x] general: ensure some plugins (for example 'fastify-healthcheck') work with latest TypeScript (currently '6.0.3'), since '4.9.0' there are some problems with plugin types (so plugin types need to be updated) ... wip
 * [x] general: tests made in TypeScript: use the Fastify server configured in its own source, and ensure routes defined works in the right way (via injection) ... wip
 * [x] general: tests made in TypeScript: find a way to have Node.js modules work (like in original js code); check if move in a dedicated source ... wip
 * [x] general: tests made in TypeScript: remove pre-ES6 code; then remove some unnecessary functions ... wip
-* [x] content: add initial (but minimal) content, start by publishing 'favicon.ico' (maybe with my plugin) ... wip
 * [x] content: update README and CHANGELOG ... wip
 
 * [x] general: check if split main server in: server creation and server start, to be able to reuse server creation even in tests and inject calls in it; for example see 'fastify-starter' at [CodeSandbox](https://codesandbox.io) ... wip
 * [x] general: use a modern and good example for Fastify 3.x as a reference for some stuff here, for example [delvedor/fastify-101 - GitHub](https://github.com/delvedor/fastify-101), even if not in TypeScript ... wip
 * [x] general: add JSON Schema to TypeScript, as seen for example <https://www.fastify.io/docs/latest/TypeScript/> (same doc seen in GitHub, only with a different style) ... wip
-* [x] general: add the ability to serve favicon and a static page as home page (add related content even here), of course using related plugins ... wip
+* [x] general: update the root URL ('/') to serve as home page a dynamic page with fragments with listed current URL published (by routes and by plugins) ... wip
 * [x] general: replace 'simple-get' with 'undici ... wip
 * [x] general: add more content in 'package.json', like in fastify-example (add stuff related to more tests, Docker, etc); but add a build mode that uses TypeScript (TS) watch mode (check if use it instead of usual dependency on 'nodemon') ... added npm custom command 'build:watch' that uses it, but it only compiles (without a server restart or similar, maybe 'nodemon' is needed even in this case) and not sure it takes in account even other resources (templates, etc), so maybe its configuration need to be tweaked ... wip
 * [x] general: add the ability to use even JavaScript (js) files, in TypeScript compiler (options) and to check them, could be useful ... wip
@@ -102,7 +99,7 @@ import { strict as assert } from 'node:assert'
 import tap, { Test } from 'tap'
 ```
 
-and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... wip
+and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all other imports using Node.js require statement, rename tap tests from 'test' to 'tap.test', import tap type for Test, to be able to update '(t)' to '(t: Test)', etc ... maybe later
 
 * [x] general: after the update to Node.js 14 LTS (14.15.0), and so output ES2020/ES11, export all as native ES Modules (ESM), important; for better TypeScript settings with ESM and CommonJS look even at <https://stackoverflow.com/questions/61305578/what-typescript-configuration-produces-output-closest-to-node-js-14-capabilities/61305579#61305579>, etc; better, wait for TypeScript 4.9.x with improved support for ESM ... maybe later
 * [x] general: update code like this great example using ESM: [fastify-101 - delvedor - github](https://github.com/delvedor/fastify-101) ... maybe later
@@ -120,5 +117,9 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: update dependencies using current semver constraints (so even TypeScript to latest 6.x) and ansure all is good ... ok, but note that doing an audit I found that @fastify/static has an high severity vulnerability (more info at <https://socket.dev/npm/package/@fastify/static/versions/>), so it must be updated at least to 10.1.3, which is a breaking change, see next update dependencies task
 * [x] general: update dependencies to latest version (check for requirements and breaking changes before), but not yet to latest TypeScript 7.x because some packages (like '@typescript-eslint/parser') are not yet compatible with it; then ensure all is good; check at <https://github.com/fastify/fastify-static/releases> for breaking changes using it, but nothing to change here for me ... ok; note that using latest Node.js LTS version (at the moment 24.x) should require related '@types/node' version (so '24.13.3' currently) and not latest ('26.4.1') but it's good the same here
 * [x] general: restore (default setting) in '.npmrc' (to `ignore-scripts=true`) so that during `npm install` and other npm commands, no additional scripts could run, for better safety; this could require to update my npm custom commands to prepend some cleanup tasks (no more called automatically when disabling such feature) ... ok done and edded cool-down period of 3 days (`min-release-age=3`) to ensure all is good in dependencies
+* [x] content: add initial (but minimal) content, start by publishing 'favicon.ico' ... ok, using my plugin
+* [x] general: ensure some plugins (for example 'fastify-healthcheck') work with latest TypeScript (currently '6.0.3'), since '4.9.0' there are some problems with plugin types (so plugin types need to be updated) ... ok, all works
+* [x] general: check if import tap type for Test, to be able to update '(t: Any)' to '(t: Test)', etc ... ok, but I had to update the import of such types, with something like: `import type { Test } from 'tap'`, then verify that types are right by running `npm run build:type-check && npm run test:clean && npm run test`, all is fine
+* [x] general: in VSCode (and other editors), remember to exclude the build output folder 'dist/' (and similar others if any) to avoid confusion when searching for code ... ok, good trick
 
 ---------------

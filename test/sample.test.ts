@@ -24,6 +24,7 @@
 const assert = require('assert').strict
 const test = require('tap').test
 const tap = require('tap')
+import type { Test } from 'tap'
 
 // test zero, just to ensure that test framework works
 assert(tap !== null)
@@ -45,7 +46,7 @@ tap.ok(utilModule.isUndefinedOrNull)
 tap.ok(utilModule.isStringEmpty)
 
 // other tests, using a different (better) syntax
-test('util, string empty or not', (t: any) => {
+test('util, string empty or not', (t: Test) => {
   // t.plan(2) // ok but use t.end() now, without having to specify/update the right number of tests
 
   t.ok(assert)

@@ -22,6 +22,7 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 const test = require('tap').test
+import type { Test } from 'tap'
 
 // load environment specific variables from '.env' file (if any) into process.env ...
 // const dotenv = require('dotenv')
@@ -31,7 +32,7 @@ const Fastify = require('fastify')
 const App = require('../dist/build-server')
 
 // some basic test, but using the async/await syntax
-test('Basic', async (t: any) => {
+test('Basic', async (t: Test) => {
   // t.plan(2) // ok but use t.end() now, without having to specify/update the right number of tests
 
   const fastify = Fastify()
