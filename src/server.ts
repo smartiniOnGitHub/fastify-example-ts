@@ -15,25 +15,18 @@
  */
 import Fastify from 'fastify'
 
-/* eslint no-console: "off" */
-/* eslint no-undef: "off" */
-/* eslint no-unused-vars: "off" */
-/* eslint callback-return: "off" */
-/* eslint no-inner-declarations: "off" */
-/* eslint @typescript-eslint/no-explicit-any: "off" */
-/* eslint @typescript-eslint/explicit-module-boundary-types: "off" */
-/* eslint @typescript-eslint/no-unused-vars: "off" */
-/* eslint @typescript-eslint/no-var-requires: "off" */
+const buildServer = require('./build-server') as any
+const routes = require('./routes') as any
+const features = require('./features') as any
 
 const fastify = Fastify()
 
 // load a code configuration for the fastify instance just built
 // fastify.register(import('./build-server')) // as esm
 // for now, register it as a Node.js classic module (commonjs)
-const server = require('./build-server')
-fastify.register(server)
-fastify.register(require('./routes')) // add some routes
-fastify.register(require('./features')) // add application features
+fastify.register(buildServer)
+fastify.register(routes) // add some routes
+fastify.register(features) // add application features
 
 fastify.listen({ port: 8000, host: '0.0.0.0' }, (err, address) => {
   if (err) {

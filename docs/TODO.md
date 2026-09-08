@@ -2,7 +2,6 @@
 
 ## TODO
 
-* [x] general: update/fix lint comments (it could require a dedicated plugin) in js and ts source files; and remove comments no more needed or valid in ts source files ... note that had to change the custom command for "lint:ts:types" from "eslint -c types/.eslintrc.json types/*/*.d.ts test/types/*/*.test-d.ts" (generic) to "eslint -c types/.eslintrc.json types/*.test-d.ts" (minimal and good for current files here) ... wip
 * [x] general: ensure all tests are good ... wip
 * [x] general: update code for Fastify v5, continuation: ensure all routes defined in the project and all routes/features exposed by my plugins works ... wip
 * [x] general: update code for Fastify v5, continuation: temporarily enable the sending of messages to NATS (change current config item in the '.env' file, from `FEATURE_NATS_DISABLE=true` to `FEATURE_NATS_DISABLE=false`), then re-disable (it's a better default setting) ... wip
@@ -122,5 +121,6 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: ensure some plugins (for example 'fastify-healthcheck') work with latest TypeScript (currently '6.0.3'), since '4.9.0' there are some problems with plugin types (so plugin types need to be updated) ... ok, all works
 * [x] general: check if import tap type for Test, to be able to update '(t: Any)' to '(t: Test)', etc ... ok, but I had to update the import of such types, with something like: `import type { Test } from 'tap'`, then verify that types are right by running `npm run build:type-check && npm run test:clean && npm run test`, all is fine
 * [x] general: in VSCode (and other editors), remember to exclude the build output folder 'dist/' (and similar others if any) to avoid confusion when searching for code, and even the '.tap/' folder ... ok, good trick
+* [x] general: update/fix lint comments (it could require a dedicated plugin) in js and ts source files; and remove comments no more needed or valid in ts source files ... note that had to change the custom command for "lint:ts:types" from "eslint -c types/.eslintrc.json types/*/*.d.ts test/types/*/*.test-d.ts" (generic) to "eslint -c types/.eslintrc.json types/*.test-d.ts" (minimal and good for current files here) ... ok, done; updated eslint config file to ecmaVersion 2022, aligned with Node.js 20 LTS currently set in this project as minimum version
 
 ---------------

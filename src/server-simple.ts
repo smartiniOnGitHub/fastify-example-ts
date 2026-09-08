@@ -15,13 +15,6 @@
  */
 import Fastify from 'fastify'
 
-/* eslint no-console: "off" */
-/* eslint no-undef: "off" */
-/* eslint no-unused-vars: "off" */
-/* eslint callback-return: "off" */
-/* eslint no-inner-declarations: "off" */
-/* eslint @typescript-eslint/no-unused-vars: "off" */
-
 const server = Fastify()
 
 server.get('/', async (request, reply) => {

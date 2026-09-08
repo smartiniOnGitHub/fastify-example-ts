@@ -43,6 +43,8 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
+    "allowJs": true,
+    "checkJs": false,
     "skipLibCheck": true
   },
   // "include": ["src/**/*"], // later check if enable this and related line

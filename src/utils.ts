@@ -14,20 +14,7 @@
  * limitations under the License.
  */
 
-// import { Url } from 'node:url'
-// import * as fs from 'node:fs'
-const fs = require('fs')
-
-/* eslint no-console: "off" */
-/* eslint no-undef: "off" */
-/* eslint no-unused-vars: "off" */
-/* eslint callback-return: "off" */
-/* eslint no-inner-declarations: "off" */
-/* eslint no-process-env: "off" */
-/* eslint no-eval: "off" */
-/* eslint @typescript-eslint/no-explicit-any: "off" */
-/* eslint @typescript-eslint/explicit-module-boundary-types: "off" */
-/* eslint @typescript-eslint/no-var-requires: "off" */
+import * as fs from 'node:fs'
 
 // define a general object, and assign functions to it ...
 // const utils = {}
@@ -251,9 +238,9 @@ function toInt (str: string): number {
   return parseInt(str, 10)
 }
 function evaluate (statement: string): boolean {
-  const evaluator = eval
+  const evaluator = Function
   try {
-    evaluator(statement)
+    evaluator(`"use strict"; return (${statement});`)()
     return true
   } catch (e) {
     return false
