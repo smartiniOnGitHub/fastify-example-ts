@@ -21,7 +21,6 @@ import fastifyHealthcheck = require('fastify-healthcheck')
 
 // configuration for enabled/disabled features
 const featuresEnabled = {
-  // TODO: ...
   favicon: true,
   // favicon: utils.featureIsEnabled(true, utils.fromEnv('FEATURE_FAVICON_DISABLE'), false),
   healthcheck: true

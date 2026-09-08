@@ -2,14 +2,11 @@
 
 ## TODO
 
-* [x] general: ensure all tests are good ... wip
-* [x] general: update code for Fastify v5, continuation: ensure all routes defined in the project and all routes/features exposed by my plugins works ... wip
-* [x] general: update code for Fastify v5, continuation: temporarily enable the sending of messages to NATS (change current config item in the '.env' file, from `FEATURE_NATS_DISABLE=true` to `FEATURE_NATS_DISABLE=false`), then re-disable (it's a better default setting) ... wip
-* [x] general: update code for Fastify v5, continuation: update CHANGELOG (with breaking and normal changes), README, etc ... last, update release date in CHANGELOG, then commit and push last changes for this release ... wip
-* [x] general: update code for Fastify v5, continuation: tag sources ... wip
-* [x] general: update code for Fastify v5, continuation: generate and inspect source docs, then publish in usual repository; usually as a post-release step ... wip
+* [x] general: update code for Fastify v5, post-release: generate and inspect source docs, then publish in usual repository; usually as a post-release step ... wip
 
 * [x] general: bump maintenance release 5.x ... wip
+* [x] general: add sample code to use my plugin 'fastify-nats-client' (already installed); then temporarily enable the sending of messages to NATS (change current config item in the '.env' file, from `FEATURE_NATS_DISABLE=true` to `FEATURE_NATS_DISABLE=false`), then re-disable (it's a better default setting) ... wip
+* [x] general: try to use TypeScript watch mode in DEV even when running the server ... wip
 * [x] general: update dependencies to latest version (check for requirements and breaking changes before) ... wip
 * [x] general: add container related file/s and related npm custom commands, using Docker; use distroless images if possible ... wip
 * [x] general: use the new function (`isContainer`) to check if the application/server if it's running in a container ... wip
@@ -122,5 +119,10 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: check if import tap type for Test, to be able to update '(t: Any)' to '(t: Test)', etc ... ok, but I had to update the import of such types, with something like: `import type { Test } from 'tap'`, then verify that types are right by running `npm run build:type-check && npm run test:clean && npm run test`, all is fine
 * [x] general: in VSCode (and other editors), remember to exclude the build output folder 'dist/' (and similar others if any) to avoid confusion when searching for code, and even the '.tap/' folder ... ok, good trick
 * [x] general: update/fix lint comments (it could require a dedicated plugin) in js and ts source files; and remove comments no more needed or valid in ts source files ... note that had to change the custom command for "lint:ts:types" from "eslint -c types/.eslintrc.json types/*/*.d.ts test/types/*/*.test-d.ts" (generic) to "eslint -c types/.eslintrc.json types/*.test-d.ts" (minimal and good for current files here) ... ok, done; updated eslint config file to ecmaVersion 2022, aligned with Node.js 20 LTS currently set in this project as minimum version
+* [x] general: ensure all tests are good ... ok
+* [x] general: ensure all server instances works (even the minimal examples) ... ok
+* [x] general: update code for Fastify v5, continuation: ensure all routes defined in the project and all routes/features exposed by my plugins works ... ok
+* [x] general: update code for Fastify v5, continuation: update CHANGELOG (with breaking and normal changes), README, etc ... last, update release date in CHANGELOG, then commit and push last changes for this release ... ok, but no CHANGELOG here, put a timestamp in git tag
+* [x] general: update code for Fastify v5, continuation: tag sources ... ok
 
 ---------------
