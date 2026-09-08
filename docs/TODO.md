@@ -2,8 +2,6 @@
 
 ## TODO
 
-* [x] general: update code for Fastify v5, post-release: generate and inspect source docs, then publish in usual repository; usually as a post-release step ... wip
-
 * [x] general: bump maintenance release 5.x ... wip
 * [x] general: add sample code to use my plugin 'fastify-nats-client' (already installed); then temporarily enable the sending of messages to NATS (change current config item in the '.env' file, from `FEATURE_NATS_DISABLE=true` to `FEATURE_NATS_DISABLE=false`), then re-disable (it's a better default setting) ... wip
 * [x] general: try to use TypeScript watch mode in DEV even when running the server ... wip
@@ -124,5 +122,6 @@ and remove eslint rule to disable @typescript-eslint/no-var-requires, fix all ot
 * [x] general: update code for Fastify v5, continuation: ensure all routes defined in the project and all routes/features exposed by my plugins works ... ok
 * [x] general: update code for Fastify v5, continuation: update CHANGELOG (with breaking and normal changes), README, etc ... last, update release date in CHANGELOG, then commit and push last changes for this release ... ok, but no CHANGELOG here, put a timestamp in git tag
 * [x] general: update code for Fastify v5, continuation: tag sources ... ok
+* [x] general: update code for Fastify v5, post-release: generate and inspect source docs, then publish in usual repository; usually as a post-release step ... ok
 
 ---------------
