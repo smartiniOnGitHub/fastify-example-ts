@@ -21,10 +21,10 @@
 /* eslint no-inner-declarations: "off" */
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
+import type { Test } from 'tap'
 const assert = require('assert').strict
 const test = require('tap').test
 const tap = require('tap')
-import type { Test } from 'tap'
 
 // test zero, just to ensure that test framework works
 assert(tap !== null)

@@ -39,7 +39,7 @@
     "lint:ts:test:fix": "standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin --fix test/*.ts",
     "lint:ts:test": "standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin test/*.ts",
     "lint:ts:types:fix": "eslint -c types/.eslintrc.json types/*.d.ts types/*.test-d.ts --fix",
-    "lint:ts:types": "eslint -c types/.eslintrc.json types/*/*.d.ts test/types/*/*.test-d.ts",
+    "lint:ts:types": "eslint -c types/.eslintrc.json types/*.test-d.ts",
     "lint:ts": "npm run lint:ts:src && npm run lint:ts:test",
     "lint": "npm run lint:js && npm run lint:ts",
     "npm:user-logs:clear": "rm ~/.npm/_logs/*.log",

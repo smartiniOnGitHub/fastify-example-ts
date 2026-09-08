@@ -21,8 +21,8 @@
 /* eslint no-inner-declarations: "off" */
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
-const test = require('tap').test
 import type { Test } from 'tap'
+const test = require('tap').test
 
 // load environment specific variables from '.env' file (if any) into process.env ...
 // const dotenv = require('dotenv')

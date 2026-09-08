@@ -16,7 +16,7 @@
   },
   "rules": {
     "no-console": "off",
-    "@typescript-eslint/indent": ["error", 2],
+    "indent": ["error", 2],
     "semi": ["error", "never"],
     "import/export": "off" // this errors on multiple exports (overload interfaces)
   },
