@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2023 the original author or authors.
+ * Copyright 2020-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,6 @@
  * limitations under the License.
  */
 import Fastify from 'fastify'
-
-/* eslint no-console: "off" */
-/* eslint no-undef: "off" */
-/* eslint no-unused-vars: "off" */
-/* eslint callback-return: "off" */
-/* eslint no-process-env: "off" */
-/* eslint @typescript-eslint/no-unused-vars: "off" */
 
 const server = Fastify()
 

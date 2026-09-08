@@ -1,0 +1,15 @@
+// tsconfig.build.json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": true,
+    "sourceMap": true,
+    "declarationMap": false,
+    "removeComments": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/*.test.ts", "dist", "lib", "node_modules"]
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2023 the original author or authors.
+ * Copyright 2020-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,7 @@
  * limitations under the License.
  */
 
-/* eslint no-console: "off" */
-/* eslint no-undef: "off" */
-/* eslint no-unused-vars: "off" */
-/* eslint callback-return: "off" */
-/* eslint @typescript-eslint/no-var-requires: "off" */
-
+import type { Test } from 'tap'
 const test = require('tap').test
 
 // load environment specific variables from '.env' file (if any) into process.env ...
@@ -30,7 +25,7 @@ const Fastify = require('fastify')
 const App = require('../dist/build-server')
 
 // some basic test, but using the async/await syntax
-test('Basic', async t => {
+test('Basic', async (t: Test) => {
   // t.plan(2) // ok but use t.end() now, without having to specify/update the right number of tests
 
   const fastify = Fastify()

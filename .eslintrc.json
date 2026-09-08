@@ -9,14 +9,25 @@
   "plugins": ["@typescript-eslint"],
   "env": { "node": true },
   "parserOptions": {
-    "ecmaVersion": 2019,
+    "ecmaVersion": 2022,
     "sourceType": "module",
-    "project": "./types/tsconfig.json",
+    "project": "./tsconfig.json",
     "createDefaultProgram": true
   },
   "rules": {
     "no-console": "off",
-    "@typescript-eslint/indent": ["error", 2],
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "callback-return": "off",
+    "no-inner-declarations": "off",
+    "no-process-env": "off",
+    "no-eval": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-require-imports": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "indent": ["error", 2],
     "semi": ["error", "never"],
     "import/export": "off" // this errors on multiple exports (overload interfaces)
   },

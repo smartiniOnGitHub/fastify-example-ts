@@ -1,20 +1,54 @@
 {
+  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    "checkJs": true,
-    "esModuleInterop": true,
-    "lib": [ "ES2020", "DOM" ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noEmit": false,
-    "noImplicitAny": true,
-    "outDir": "dist",
-    "preserveConstEnums": true,
-    "removeComments": true,
-    "sourceMap": false,
+    // File Layout
+    // "rootDir": "./src",
+    "rootDir": ".", // manually added
+    "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "nodenext",
+    "target": "esnext",
+    // "types": [],
+    // For nodejs:
+    "lib": ["esnext"],
+    "types": ["node"],
+    // and npm install -D @types/node
+    "moduleResolution": "NodeNext", // manually added for nodejs
+    // "esModuleInterop": true, // manually added, but keep commented
+    // "allowSyntheticDefaultImports": true, // manually added, but keep commented
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
     "strict": true,
-    "strictNullChecks": true,
-    "target": "ES2020"
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false, // changed from the recommended value to avoid issues with nodejs and ts-node
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true
   },
-  "include": ["src"],
-  "exclude": ["lib", "node_modules"],
+  // "include": ["src/**/*"], // later check if enable this and related line
+  // "exclude": ["node_modules", "**/*.test.ts"]
+  "include": ["src/**/*", "**/*.test.ts"], // if enabled, ensure to exclude dist/test files in package etc
+  "exclude": ["dist", "lib", "node_modules"]
 }

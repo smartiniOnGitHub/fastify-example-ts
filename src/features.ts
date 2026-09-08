@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2023 the original author or authors.
+ * Copyright 2020-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,23 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { FastifyInstance, FastifyReply, FastifyRequest, FastifyServerOptions } from 'fastify'
-
-/* eslint no-console: "off" */
-/* eslint no-undef: "off" */
-/* eslint no-unused-vars: "off" */
-/* eslint callback-return: "off" */
-/* eslint no-process-env: "off" */
-/* eslint @typescript-eslint/no-explicit-any: "off" */
-/* eslint @typescript-eslint/explicit-module-boundary-types: "off" */
-/* eslint @typescript-eslint/no-unused-vars: "off" */
-/* eslint @typescript-eslint/no-var-requires: "off" */
+import type { FastifyInstance, FastifyServerOptions } from 'fastify'
+import fastifyFavicon = require('fastify-favicon')
+import fastifyHealthcheck = require('fastify-healthcheck')
 
 // features wrap: depending on enabled feature flags, load and configure each one
 
 // configuration for enabled/disabled features
 const featuresEnabled = {
-  // TODO: ...
   favicon: true,
   // favicon: utils.featureIsEnabled(true, utils.fromEnv('FEATURE_FAVICON_DISABLE'), false),
   healthcheck: true
@@ -46,11 +37,11 @@ async function features (fastify: FastifyInstance, opts: FastifyServerOptions) {
   }
 
   // define an object to return, it could contain useful data/references, depending on features enabled
-  const features = {}
+  // const features = {}
 
   if (featuresEnabled.favicon) {
     // fastify-favicon, example using only plugin default options
-    fastify.register(require('fastify-favicon'), {
+    fastify.register(fastifyFavicon, {
     })
   }
 
@@ -58,7 +49,7 @@ async function features (fastify: FastifyInstance, opts: FastifyServerOptions) {
     // fastify-healthcheck, example with null or empty options, using only plugin default options
     // features.healthcheck = {} // sample
     // enable only the option to expose even process uptime, as a sample
-    fastify.register(require('fastify-healthcheck'), {
+    fastify.register(fastifyHealthcheck, {
       exposeUptime: true
     })
   }

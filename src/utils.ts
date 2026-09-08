@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2023 the original author or authors.
+ * Copyright 2020-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,7 @@
  * limitations under the License.
  */
 
-// import { Url } from 'node:url'
-
-/* eslint no-console: "off" */
-/* eslint no-undef: "off" */
-/* eslint no-unused-vars: "off" */
-/* eslint callback-return: "off" */
-/* eslint no-process-env: "off" */
-/* eslint no-eval: "off" */
-/* eslint @typescript-eslint/no-explicit-any: "off" */
-/* eslint @typescript-eslint/explicit-module-boundary-types: "off" */
-/* eslint @typescript-eslint/no-var-requires: "off" */
+import * as fs from 'node:fs'
 
 // define a general object, and assign functions to it ...
 // const utils = {}
@@ -248,9 +238,9 @@ function toInt (str: string): number {
   return parseInt(str, 10)
 }
 function evaluate (statement: string): boolean {
-  const evaluator = eval
+  const evaluator = Function
   try {
-    evaluator(statement)
+    evaluator(`"use strict"; return (${statement});`)()
     return true
   } catch (e) {
     return false
@@ -545,6 +535,25 @@ function getFromEither (either: any, { throwOnError = false, value = {} } = {}):
   }
 }
 
+// Synchronous check for Docker/Podman/container environment
+// this is required because the 'is-docker' library now is published only as an ESM module,
+// and we want to keep this file as CommonJS for compatibility with older Node.js versions
+// (and also because it is not a problem to use sync check here, as it is executed only once at startup)
+function isContainer (): boolean {
+  try {
+    // Check for Docker/Podman container marker
+    if (fs.existsSync('/.dockerenv')) return true
+    // Check for Podman-specific marker (when running rootless Podman or in some nested scenarios)
+    if (fs.existsSync('/run/.containerenv')) return true
+    // Check for container environment variables
+    if (process.env.DOCKER_HOST) return true
+    if (process.env.PODMAN_HOST) return true
+    return false
+  } catch (err) {
+    return false
+  }
+}
+
 export = {
   buildError,
   clearConsole,
@@ -569,6 +578,7 @@ export = {
   isArray,
   isArrayEmpty,
   isBoolean,
+  isContainer,
   isDate,
   isDefined,
   isDefinedAndNotNull,

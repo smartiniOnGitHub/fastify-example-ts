@@ -15,20 +15,13 @@
  */
 import Fastify from 'fastify'
 
-const buildServer = require('./build-server') as any
-const routes = require('./routes') as any
-const features = require('./features') as any
+const server = Fastify()
 
-const fastify = Fastify()
+server.get('/', async (request, reply) => {
+  return 'Hello from Fastify and JavaScript.'
+})
 
-// load a code configuration for the fastify instance just built
-// fastify.register(import('./build-server')) // as esm
-// for now, register it as a Node.js classic module (commonjs)
-fastify.register(buildServer)
-fastify.register(routes) // add some routes
-fastify.register(features) // add application features
-
-fastify.listen({ port: 8000, host: '0.0.0.0' }, (err, address) => {
+server.listen({ port: 8000, host: '0.0.0.0' }, (err, address) => {
   if (err) {
     console.error(err)
     process.exit(1)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2023 the original author or authors.
+ * Copyright 2020-2026 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,8 @@
  */
 import { FastifyInstance, FastifyReply, FastifyRequest, FastifyServerOptions } from 'fastify'
 
-/* eslint no-console: "off" */
-/* eslint no-undef: "off" */
-/* eslint no-unused-vars: "off" */
-/* eslint callback-return: "off" */
-/* eslint no-process-env: "off" */
-/* eslint @typescript-eslint/no-explicit-any: "off" */
-/* eslint @typescript-eslint/explicit-module-boundary-types: "off" */
-/* eslint @typescript-eslint/no-unused-vars: "off" */
-/* eslint @typescript-eslint/no-var-requires: "off" */
-
+/*
+// re-enable later ...
 // const k = require('./constants')
 const utils = require('./utils')
 
@@ -41,6 +33,7 @@ const pluginRoutes = [
   { link: 'favicon', url: '/favicon.ico', description: "Expose the favicon, by 'fastify-favicon' plugin" },
   { link: 'healthcheck', url: '/health', description: "Expose an healthcheck, by 'fastify-healthcheck' plugin" }
 ].sort(utils.compareProperties('link')) // opt. add sort order, 'asc' (by default) or 'desc'
+ */
 
 // add content (routes, etc) in the given server instance
 // note that some routes here are normal (non-async) and others are async
@@ -59,4 +52,5 @@ async function routes (fastify: FastifyInstance, opts: FastifyServerOptions) { /
   })
 }
 
+// plugin routes can be registered here when needed; this file keeps the route setup minimal.
 module.exports = routes
